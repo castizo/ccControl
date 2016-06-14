@@ -1,0 +1,472 @@
+info_begin
+format: 1
+mpd_version: 0.16.7
+fs_charset: UTF-8
+tag: Artist
+tag: ArtistSort
+tag: Album
+tag: AlbumArtist
+tag: AlbumArtistSort
+tag: Title
+tag: Track
+tag: Name
+tag: Genre
+tag: Date
+tag: Composer
+tag: Performer
+tag: Disc
+tag: MUSICBRAINZ_ARTISTID
+tag: MUSICBRAINZ_ALBUMID
+tag: MUSICBRAINZ_ALBUMARTISTID
+tag: MUSICBRAINZ_TRACKID
+info_end
+directory: 1
+mtime: 1373808033
+begin: 1
+song_begin: Europe - The Final Countdown.mp3
+Time: 309
+Artist: Europe
+Title: The Final Countdown
+Album: 20 Years On Mtv - 1986
+Track: 01
+Date: 1986
+mtime: 1368734830
+song_end
+end: 1
+directory: 2
+mtime: 1373808965
+begin: 2
+song_begin: Survivor - Eye Of The Tiger.mp3
+Time: 244
+Artist: Survivor
+Title: Eye Of The Tiger
+Album: 20 Years On Mtv - 1982
+Track: 01
+Date: 1982
+mtime: 1368734835
+song_end
+end: 2
+directory: 3
+mtime: 1373809649
+begin: 3
+song_begin: hello.mp3
+Time: 194
+Artist: Martin Solveig
+AlbumArtist: Various Artists
+Title: Hello
+Album: Maxima FM Compilation Vol. 12
+Track: 6
+Date: 2011
+Genre: Dance
+Composer: Martina Sorbara
+Disc: 1/3
+mtime: 1312848304
+song_end
+end: 3
+directory: pablo
+mtime: 1373809649
+begin: pablo
+song_begin: 04 - Michael Jackson - Black Or White.mp3
+Time: 256
+Artist: Michael Jackson
+Title: Black Or White
+Album: 20 Years On Mtv - 1991
+Track: 04
+Date: 1991
+mtime: 1191000676
+song_end
+song_begin: 01 - Oasis - Wonderwall.mp3
+Time: 258
+Artist: Oasis
+Title: Wonderwall
+Album: 20 Years On Mtv - 1995
+Track: 01
+Date: 1995
+mtime: 1190937670
+song_end
+song_begin: 03 - Bon Jovi - Itns My Life.mp3
+Time: 227
+Artist: Bon Jovi
+Title: It´s My Life
+Album: 20 Years On Mtv - 2000
+Track: 03
+Date: 2000
+mtime: 1190932498
+song_end
+song_begin: 04 - Eminem - Stan.mp3
+Time: 404
+Artist: Eminem
+Title: Stan
+Album: 20 Years On Mtv - 2000
+Track: 04
+Date: 2000
+mtime: 1190933960
+song_end
+song_begin: 10 - Anastacia - I'm Outta Love.mp3
+Time: 243
+Artist: Anastacia
+Title: I'm Outta Love
+Album: 20 Years On Mtv - 2000
+Track: 10
+Date: 2000
+mtime: 1190934618
+song_end
+song_begin: 1-02 20 De Abril.mp3
+Time: 234
+Artist: Celtas Cortos
+AlbumArtist: Celtas Cortos
+Title: 20 De Abril
+Album: Grandes Exitos [Disc 1]
+Track: 2
+Date: 2001
+Genre: Latin Rock
+Disc: 1/2
+mtime: 1312897910
+song_end
+song_begin: 18 S&M (Dave Aude Radio Edit).mp3
+Time: 230
+Artist: Rihanna
+AlbumArtist: Various Artists
+Title: S&M (Dave Aude Radio Edit)
+Album: Maxima 51 Chart [6 Agosto - 13 Agosto]
+Track: 18/51
+Date: 2011
+Genre: Dance
+mtime: 1312898740
+song_end
+song_begin: 1-15 Cry Cry.mp3
+Time: 224
+Artist: Oceana
+AlbumArtist: Various Artists
+Title: Cry Cry
+Album: Maxima 51 Chart [Diciembre 2010]
+Track: 15
+Date: 2010
+Genre: Dance
+Composer: Oceana Mahlmann
+Disc: 1/2
+mtime: 1312899532
+song_end
+song_begin: 2-15 This Is The Life.mp3
+Time: 185
+Artist: Amy MacDonald
+AlbumArtist: Various Artists
+Title: This Is The Life
+Album: NOW 69 [Disc 2]
+Track: 15
+Date: 2008
+Genre: Pop Vocal
+Composer: Various Composers
+Disc: 2/2
+mtime: 1312878262
+song_end
+end: pablo
+directory: resources
+mtime: 1380368322
+begin: resources
+directory: interesting
+mtime: 1368728836
+begin: resources/interesting
+song_begin: alarm-clock-elapsed.oga
+Time: 6
+mtime: 1334076536
+song_end
+song_begin: audio-test-signal.oga
+Time: 1
+mtime: 1334076536
+song_end
+song_begin: desktop-logout.ogg
+Time: 2
+mtime: 1299079327
+song_end
+end: resources/interesting
+directory: mac
+mtime: 1368728483
+begin: resources/mac
+song_begin: 1.wav
+Time: 2
+mtime: 1368728458
+song_end
+song_begin: 2.wav
+Time: 2
+mtime: 1368728466
+song_end
+song_begin: 3.wav
+Time: 2
+mtime: 1368728475
+song_end
+song_begin: 4.wav
+Time: 2
+mtime: 1368728483
+song_end
+song_begin: Startup1.wav
+Time: 2
+mtime: 1368728446
+song_end
+song_begin: Startup2.wav
+Time: 1
+mtime: 1368728446
+song_end
+end: resources/mac
+directory: other
+mtime: 1368728835
+begin: resources/other
+song_begin: Noise.wav
+Time: 1
+mtime: 1333512723
+song_end
+song_begin: audio-volume-change.oga
+Time: 0
+mtime: 1334076536
+song_end
+song_begin: bell.oga
+Time: 1
+mtime: 1334076536
+song_end
+song_begin: button-pressed.ogg
+Time: 1
+mtime: 1299079327
+song_end
+song_begin: camera-shutter.oga
+Time: 1
+mtime: 1360256406
+song_end
+song_begin: complete.oga
+Time: 1
+mtime: 1334076536
+song_end
+song_begin: desktop-login.ogg
+Time: 8
+mtime: 1299079327
+song_end
+song_begin: desktop-logout.ogg
+Time: 2
+mtime: 1299079327
+song_end
+song_begin: device-added.oga
+Time: 0
+mtime: 1360256406
+song_end
+song_begin: device-removed.oga
+Time: 0
+mtime: 1360256406
+song_end
+song_begin: dialog-information.oga
+Time: 0
+mtime: 1334076536
+song_end
+song_begin: dialog-warning.oga
+Time: 0
+mtime: 1360256406
+song_end
+song_begin: drip.ogg
+Time: 0
+mtime: 1334596985
+song_end
+song_begin: encendido_completado.wav
+Time: 1
+mtime: 1315508052
+song_end
+song_begin: glass.ogg
+Time: 1
+mtime: 1334596985
+song_end
+song_begin: message-new-instant.oga
+Time: 1
+mtime: 1334076536
+song_end
+song_begin: message.oga
+Time: 0
+mtime: 1334076536
+song_end
+song_begin: phone-incoming-call.oga
+Time: 1
+mtime: 1334076536
+song_end
+song_begin: phone-outgoing-busy.oga
+Time: 3
+mtime: 1334076536
+song_end
+song_begin: phone-outgoing-calling.oga
+Time: 1
+mtime: 1334076536
+song_end
+song_begin: service-login.oga
+Time: 2
+mtime: 1334076536
+song_end
+song_begin: service-logout.oga
+Time: 2
+mtime: 1334076536
+song_end
+song_begin: sonar.ogg
+Time: 1
+mtime: 1334596985
+song_end
+song_begin: suspend-error.oga
+Time: 1
+mtime: 1334076536
+song_end
+song_begin: test.wav
+Time: 0
+mtime: 1328496693
+song_end
+song_begin: trash-empty.oga
+Time: 1
+mtime: 1334076536
+song_end
+end: resources/other
+directory: stereo_test_sounds
+mtime: 1368728839
+begin: resources/stereo_test_sounds
+song_begin: channel_stereo_test.mp3
+Time: 63
+mtime: 1366878118
+song_end
+song_begin: left_right_stereo_test.mp3
+Time: 21
+mtime: 1366877698
+song_end
+song_begin: music_stereo_test.mp3
+Time: 22
+Title: Stereo Audio Test (Left, Right)
+mtime: 1366875223
+song_end
+end: resources/stereo_test_sounds
+song_begin: 1.wav
+Time: 0
+mtime: 1366205764
+song_end
+song_begin: 2.wav
+Time: 0
+mtime: 1366205819
+song_end
+song_begin: 3.wav
+Time: 0
+mtime: 1366205823
+song_end
+song_begin: 4.wav
+Time: 0
+mtime: 1366205826
+song_end
+song_begin: 5.wav
+Time: 0
+mtime: 1366205828
+song_end
+song_begin: 6.wav
+Time: 0
+mtime: 1366205831
+song_end
+song_begin: alarm.wav
+Time: 0
+mtime: 1311815046
+song_end
+song_begin: dreamcast.wav
+Time: 8
+mtime: 1368728739
+song_end
+song_begin: encendido_completado.wav
+Time: 1
+mtime: 1315508052
+song_end
+song_begin: reset_network.wav
+Time: 3
+Artist: castizer
+mtime: 1380366989
+song_end
+song_begin: reset_network_completed.wav
+Time: 5
+Artist: castizer
+mtime: 1380367110
+song_end
+song_begin: reset_network_error.wav
+Time: 5
+Artist: castizer
+mtime: 1380367070
+song_end
+song_begin: sleep.wav
+Time: 0
+mtime: 1341848940
+song_end
+song_begin: sonar.wav
+Time: 0
+mtime: 1368731773
+song_end
+song_begin: update.wav
+Time: 10
+Artist: castizer
+mtime: 1380367197
+song_end
+song_begin: update_completed.wav
+Time: 18
+Artist: castizer
+mtime: 1380367381
+song_end
+song_begin: update_music_db.wav
+Time: 11
+Artist: castizer
+mtime: 1380366807
+song_end
+song_begin: update_music_db_completed.wav
+Time: 3
+Artist: castizer
+mtime: 1380366779
+song_end
+song_begin: update_network_error_internet.wav
+Time: 11
+Artist: castizer
+mtime: 1380367434
+song_end
+song_begin: update_network_error_other.wav
+Time: 12
+Artist: castizer
+mtime: 1380367305
+song_end
+song_begin: update_uptodate.wav
+Time: 7
+Artist: castizer
+mtime: 1380367246
+song_end
+song_begin: wakeup.wav
+Time: 0
+mtime: 1341848940
+song_end
+end: resources
+song_begin: animal_Instinct.mp3
+Time: 213
+Artist: The Cranberries
+AlbumArtist: The Cranberries
+Title: Animal Instinct
+Album: Bury The Hatchet [UK]
+Track: 1
+Date: 1999
+Genre: Alternative Pop
+Composer: Noel Hogan
+Disc: 1/1
+mtime: 1320505111
+song_end
+song_begin: emigrante.mp3
+Time: 256
+Artist: Celtas Cortos
+AlbumArtist: Celtas Cortos
+Title: El Emigrante
+Album: Grandes Exitos [Disc 1]
+Track: 8
+Date: 2001
+Genre: Latin Rock
+Disc: 1/2
+mtime: 1312901509
+song_end
+song_begin: with_or_without_you.mp3
+Time: 296
+Artist: U2
+AlbumArtist: U2
+Title: With Or Without You
+Album: The Joshua Tree
+Track: 3
+Date: 1987
+Genre: Adult Alternative Rock
+Composer: The Edge
+Disc: 1/1
+mtime: 1363213069
+song_end

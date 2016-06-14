@@ -1,0 +1,973 @@
+May 09 05:27 : avahi: Service 'Music Player' successfully established.
+May 09 05:27 : avahi: Service 'Music Player' successfully established.
+May 09 10:10 : avahi: Client Disconnected, will reconnect shortly
+May 09 10:33 : avahi: Service 'Music Player' successfully established.
+May 13 11:54 : avahi: Service 'Music Player' successfully established.
+May 13 11:54 : avahi: Service 'Music Player' successfully established.
+May 13 11:55 : avahi: Service 'Music Player' successfully established.
+May 13 11:55 : avahi: Service 'Music Player' successfully established.
+May 13 11:56 : avahi: Service 'Music Player' successfully established.
+May 13 11:56 : avahi: Service 'Music Player' successfully established.
+May 13 11:59 : avahi: Service 'Music Player' successfully established.
+May 13 12:00 : avahi: Service 'Music Player' successfully established.
+May 13 12:02 : avahi: Service 'Music Player' successfully established.
+May 13 12:02 : avahi: Service 'Music Player' successfully established.
+May 13 12:22 : avahi: Service 'Music Player' successfully established.
+May 13 12:22 : mixer: Failed to read mixer for 'My ALSA Device': no such mixer control: PCM
+May 13 12:22 : avahi: Service 'Music Player' successfully established.
+May 13 12:22 : avahi: Service 'Music Player' successfully established.
+May 13 12:22 : avahi: Service 'Music Player' successfully established.
+May 13 12:32 : avahi: Service 'Music Player' successfully established.
+May 13 12:34 : avahi: Service 'Music Player' successfully established.
+May 13 12:35 : avahi: Service 'Music Player' successfully established.
+May 13 12:35 : avahi: Service 'Music Player' successfully established.
+May 13 12:39 : avahi: Service 'Music Player' successfully established.
+May 13 12:39 : avahi: Service 'Music Player' successfully established.
+May 13 12:40 : mixer: Failed to read mixer for 'My ALSA Device': no such mixer control: PCM
+May 13 12:40 : avahi: Service 'Music Player' successfully established.
+May 13 12:40 : mixer: Failed to read mixer for 'My ALSA Device': no such mixer control: PCM
+May 13 12:40 : avahi: Service 'Music Player' successfully established.
+May 13 12:41 : mixer: Failed to read mixer for 'My ALSA Device': no such mixer control: PCM
+May 13 12:41 : avahi: Service 'Music Player' successfully established.
+May 13 12:41 : mixer: Failed to read mixer for 'My ALSA Device': no such mixer control: PCM
+May 13 12:42 : avahi: Service 'Music Player' successfully established.
+May 13 12:42 : avahi: Service 'Music Player' successfully established.
+May 13 12:42 : mixer: Failed to read mixer for 'My ALSA Device': no such mixer control: PCM
+May 13 12:46 : avahi: Service 'Music Player' successfully established.
+May 13 12:46 : mixer: Failed to read mixer for 'My ALSA Device': no such mixer control: PCM
+May 13 12:46 : update: added /animal_Instinct.mp3
+May 13 12:46 : update: added /emigrante.mp3
+May 13 12:46 : update: added /with_or_without_you.mp3
+May 13 12:46 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 13 14:26 : avahi: Service 'Music Player' successfully established.
+May 13 14:27 : mixer: Failed to read mixer for 'My ALSA Device': no such mixer control: PCM
+May 13 14:28 : avahi: Service 'Music Player' successfully established.
+May 13 14:33 : avahi: Service 'Music Player' successfully established.
+May 13 14:40 : avahi: Service 'Music Player' successfully established.
+May 13 14:40 : mixer: Failed to read mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 07:28 : avahi: Service 'Music Player' successfully established.
+May 14 07:31 : avahi: Service 'Music Player' successfully established.
+May 14 07:31 : avahi: Service 'Music Player' successfully established.
+May 14 07:32 : mixer: Failed to read mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 07:33 : avahi: Service 'Music Player' successfully established.
+May 14 07:34 : avahi: Service 'Music Player' successfully established.
+May 14 07:34 : mixer: Failed to read mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:01 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:01 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:01 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:01 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:02 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:02 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:02 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:02 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:03 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:04 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:15 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:17 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:19 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:19 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:28 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:32 : player_thread: played "animal_Instinct.mp3"
+May 14 08:35 : output: Failed to open "My ALSA Device" [alsa]: Failed to open ALSA device "hw:0,0": Device or resource busy
+May 14 08:35 : player_thread: problems opening audio device while playing "animal_Instinct.mp3"
+May 14 08:36 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:37 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:39 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:40 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 08:47 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 09:52 : config: option 'mixer_device' on line 17 was not recognized
+May 14 09:52 : config: option 'mixer_control' on line 18 was not recognized
+May 14 09:52 : config: option 'mixer_index' on line 19 was not recognized
+May 14 09:52 : decoder_thread: Unrecognized URI
+May 14 09:52 : decoder_thread: Unrecognized URI
+May 14 09:52 : decoder_thread: Unrecognized URI
+May 14 09:52 : decoder_thread: Unrecognized URI
+May 14 09:52 : avahi: Service 'Music Player' successfully established.
+May 14 09:54 : config: option 'mixer_device' on line 17 was not recognized
+May 14 09:54 : config: option 'mixer_control' on line 18 was not recognized
+May 14 09:54 : config: option 'mixer_index' on line 19 was not recognized
+May 14 09:54 : decoder_thread: Unrecognized URI
+May 14 09:54 : decoder_thread: Unrecognized URI
+May 14 09:54 : decoder_thread: Unrecognized URI
+May 14 09:54 : decoder_thread: Unrecognized URI
+May 14 09:54 : avahi: Service 'Music Player' successfully established.
+May 14 09:55 : config: option 'mixer_device' on line 17 was not recognized
+May 14 09:55 : config: option 'mixer_control' on line 18 was not recognized
+May 14 09:55 : config: option 'mixer_index' on line 19 was not recognized
+May 14 09:55 : decoder_thread: Unrecognized URI
+May 14 09:55 : decoder_thread: Unrecognized URI
+May 14 09:55 : decoder_thread: Unrecognized URI
+May 14 09:55 : decoder_thread: Unrecognized URI
+May 14 09:55 : avahi: Service 'Music Player' successfully established.
+May 14 09:56 : decoder_thread: Unrecognized URI
+May 14 09:56 : decoder_thread: Unrecognized URI
+May 14 09:56 : decoder_thread: Unrecognized URI
+May 14 09:56 : decoder_thread: Unrecognized URI
+May 14 09:57 : config: option 'mixer_device' on line 17 was not recognized
+May 14 09:57 : config: option 'mixer_control' on line 18 was not recognized
+May 14 09:57 : config: option 'mixer_index' on line 19 was not recognized
+May 14 09:57 : avahi: Service 'Music Player' successfully established.
+May 14 09:57 : decoder_thread: Unrecognized URI
+May 14 09:57 : decoder_thread: Unrecognized URI
+May 14 09:57 : decoder_thread: Unrecognized URI
+May 14 09:57 : decoder_thread: Unrecognized URI
+May 14 09:57 : decoder_thread: Unrecognized URI
+May 14 09:57 : decoder_thread: Unrecognized URI
+May 14 09:57 : decoder_thread: Unrecognized URI
+May 14 09:57 : decoder_thread: Unrecognized URI
+May 14 09:57 : decoder_thread: Unrecognized URI
+May 14 09:57 : decoder_thread: Unrecognized URI
+May 14 09:59 : decoder_thread: Unrecognized URI
+May 14 09:59 : decoder_thread: Unrecognized URI
+May 14 09:59 : decoder_thread: Unrecognized URI
+May 14 09:59 : decoder_thread: Unrecognized URI
+May 14 10:00 : decoder_thread: Unrecognized URI
+May 14 10:00 : decoder_thread: Unrecognized URI
+May 14 10:00 : decoder_thread: Unrecognized URI
+May 14 10:00 : decoder_thread: Unrecognized URI
+May 14 10:00 : decoder_thread: Unrecognized URI
+May 14 10:00 : decoder_thread: Unrecognized URI
+May 14 10:00 : decoder_thread: Unrecognized URI
+May 14 10:00 : decoder_thread: Unrecognized URI
+May 14 10:00 : config: option 'mixer_device' on line 17 was not recognized
+May 14 10:00 : config: option 'mixer_control' on line 18 was not recognized
+May 14 10:00 : config: option 'mixer_index' on line 19 was not recognized
+May 14 10:00 : decoder_thread: Unrecognized URI
+May 14 10:00 : decoder_thread: Unrecognized URI
+May 14 10:00 : decoder_thread: Unrecognized URI
+May 14 10:00 : decoder_thread: Unrecognized URI
+May 14 10:00 : avahi: Service 'Music Player' successfully established.
+May 14 10:18 : state_file: failed to open /home/d/workspace/castizer-control/mpd/state: No such file or directory
+May 14 10:18 : avahi: Service 'Music Player' successfully established.
+May 14 10:18 : mixer: Failed to read mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:18 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:19 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:19 : avahi: Service 'Music Player' successfully established.
+May 14 10:19 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:21 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:21 : avahi: Service 'Music Player' successfully established.
+May 14 10:21 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:21 : avahi: Service 'Music Player' successfully established.
+May 14 10:22 : mixer: Failed to read mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:22 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:24 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:24 : avahi: Service 'Music Player' successfully established.
+May 14 10:25 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:25 : avahi: Service 'Music Player' successfully established.
+May 14 10:25 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:28 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:28 : avahi: Service 'Music Player' successfully established.
+May 14 10:30 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:30 : avahi: Service 'Music Player' successfully established.
+May 14 10:31 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:35 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:35 : avahi: Service 'Music Player' successfully established.
+May 14 10:35 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:48 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:48 : avahi: Service 'Music Player' successfully established.
+May 14 10:48 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:48 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:49 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:49 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:49 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:51 : Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+May 14 10:51 : avahi: Service 'Music Player' successfully established.
+May 14 11:05 : config: option 'mixer_device' on line 19 was not recognized
+May 14 11:05 : config: option 'mixer_control' on line 20 was not recognized
+May 14 11:05 : config: option 'mixer_index' on line 21 was not recognized
+May 14 11:05 : avahi: Service 'Music Player' successfully established.
+May 14 11:08 : config: option 'mixer_device' on line 19 was not recognized
+May 14 11:08 : config: option 'mixer_control' on line 20 was not recognized
+May 14 11:08 : config: option 'mixer_index' on line 21 was not recognized
+May 14 11:08 : avahi: Service 'Music Player' successfully established.
+May 14 11:10 : config: option 'mixer_device' on line 19 was not recognized
+May 14 11:10 : config: option 'mixer_control' on line 20 was not recognized
+May 14 11:10 : config: option 'mixer_index' on line 21 was not recognized
+May 14 11:10 : avahi: Service 'Music Player' successfully established.
+May 14 11:10 : config: option 'mixer_device' on line 19 was not recognized
+May 14 11:10 : config: option 'mixer_control' on line 20 was not recognized
+May 14 11:10 : config: option 'mixer_index' on line 21 was not recognized
+May 14 11:10 : avahi: Service 'Music Player' successfully established.
+May 14 11:11 : config: option 'mixer_device' on line 19 was not recognized
+May 14 11:11 : config: option 'mixer_control' on line 20 was not recognized
+May 14 11:11 : config: option 'mixer_index' on line 21 was not recognized
+May 14 11:11 : avahi: Service 'Music Player' successfully established.
+May 14 11:15 : config: option 'mixer_device' on line 19 was not recognized
+May 14 11:15 : config: option 'mixer_control' on line 20 was not recognized
+May 14 11:15 : config: option 'mixer_index' on line 21 was not recognized
+May 14 11:15 : avahi: Service 'Music Player' successfully established.
+May 14 11:16 : config: option 'mixer_device' on line 19 was not recognized
+May 14 11:16 : config: option 'mixer_control' on line 20 was not recognized
+May 14 11:16 : config: option 'mixer_index' on line 21 was not recognized
+May 14 11:16 : avahi: Service 'Music Player' successfully established.
+May 14 11:16 : config: option 'mixer_device' on line 19 was not recognized
+May 14 11:16 : config: option 'mixer_control' on line 20 was not recognized
+May 14 11:16 : config: option 'mixer_index' on line 21 was not recognized
+May 14 11:16 : avahi: Service 'Music Player' successfully established.
+May 14 11:16 : config: option 'mixer_device' on line 19 was not recognized
+May 14 11:16 : config: option 'mixer_control' on line 20 was not recognized
+May 14 11:16 : config: option 'mixer_index' on line 21 was not recognized
+May 14 11:16 : avahi: Service 'Music Player' successfully established.
+May 16 18:18 : config: option 'mixer_device' on line 19 was not recognized
+May 16 18:18 : config: option 'mixer_control' on line 20 was not recognized
+May 16 18:18 : config: option 'mixer_index' on line 21 was not recognized
+May 16 18:18 : avahi: Service 'Music Player' successfully established.
+May 16 18:19 : output: Failed to open "My ALSA Device" [alsa]: Failed to open ALSA device "hw:0,0": Device or resource busy
+May 16 18:19 : player_thread: problems opening audio device while playing "animal_Instinct.mp3"
+May 16 18:19 : output: Failed to open "My ALSA Device" [alsa]: Failed to open ALSA device "hw:0,0": Device or resource busy
+May 16 18:35 : config: option 'mixer_device' on line 19 was not recognized
+May 16 18:35 : config: option 'mixer_control' on line 20 was not recognized
+May 16 18:35 : config: option 'mixer_index' on line 21 was not recognized
+May 16 18:35 : avahi: Service 'Music Player' successfully established.
+May 16 18:51 : config: option 'mixer_device' on line 19 was not recognized
+May 16 18:51 : config: option 'mixer_control' on line 20 was not recognized
+May 16 18:51 : config: option 'mixer_index' on line 21 was not recognized
+May 16 18:51 : avahi: Service 'Music Player' successfully established.
+May 16 18:51 : config: option 'mixer_device' on line 19 was not recognized
+May 16 18:51 : config: option 'mixer_control' on line 20 was not recognized
+May 16 18:51 : config: option 'mixer_index' on line 21 was not recognized
+May 16 18:51 : avahi: Service 'Music Player' successfully established.
+May 16 18:52 : config: option 'mixer_device' on line 19 was not recognized
+May 16 18:52 : config: option 'mixer_control' on line 20 was not recognized
+May 16 18:52 : config: option 'mixer_index' on line 21 was not recognized
+May 16 18:52 : avahi: Service 'Music Player' successfully established.
+May 16 18:53 : config: option 'mixer_device' on line 19 was not recognized
+May 16 18:53 : config: option 'mixer_control' on line 20 was not recognized
+May 16 18:53 : config: option 'mixer_index' on line 21 was not recognized
+May 16 18:53 : avahi: Service 'Music Player' successfully established.
+May 16 18:54 : config: option 'mixer_device' on line 19 was not recognized
+May 16 18:54 : config: option 'mixer_control' on line 20 was not recognized
+May 16 18:54 : config: option 'mixer_index' on line 21 was not recognized
+May 16 18:54 : avahi: Service 'Music Player' successfully established.
+May 16 18:54 : config: option 'mixer_device' on line 19 was not recognized
+May 16 18:54 : config: option 'mixer_control' on line 20 was not recognized
+May 16 18:54 : config: option 'mixer_index' on line 21 was not recognized
+May 16 18:54 : avahi: Service 'Music Player' successfully established.
+May 16 18:54 : config: option 'mixer_device' on line 19 was not recognized
+May 16 18:54 : config: option 'mixer_control' on line 20 was not recognized
+May 16 18:54 : config: option 'mixer_index' on line 21 was not recognized
+May 16 18:54 : avahi: Service 'Music Player' successfully established.
+May 16 18:54 : config: option 'mixer_device' on line 19 was not recognized
+May 16 18:54 : config: option 'mixer_control' on line 20 was not recognized
+May 16 18:54 : config: option 'mixer_index' on line 21 was not recognized
+May 16 18:54 : avahi: Service 'Music Player' successfully established.
+May 16 19:11 : update: added pablo/1-02 20 De Abril.mp3
+May 16 19:11 : update: added pablo/01 - Oasis - Wonderwall.mp3
+May 16 19:11 : update: added pablo/03 - Bon Jovi - Itns My Life.mp3
+May 16 19:11 : update: added pablo/04 - Eminem - Stan.mp3
+May 16 19:11 : update: added pablo/1-15 Cry Cry.mp3
+May 16 19:11 : update: added pablo/04 - Michael Jackson - Black Or White.mp3
+May 16 19:11 : update: added pablo/18 S&M (Dave Aude Radio Edit).mp3
+May 16 19:11 : update: added pablo/10 - Anastacia - I'm Outta Love.mp3
+May 16 19:11 : update: updating pablo/1-15 Cry Cry.mp3
+May 16 19:11 : update: added resources/5.wav
+May 16 19:11 : update: added resources/6.wav
+May 16 19:11 : update: added resources/interesting/desktop-logout.ogg
+May 16 19:11 : update: added resources/interesting/alarm-clock-elapsed.oga
+May 16 19:11 : update: added resources/interesting/audio-test-signal.oga
+May 16 19:11 : update: added resources/1.wav
+May 16 19:11 : update: added resources/4.wav
+May 16 19:11 : update: added resources/stereo_test_sounds/music_stereo_test.mp3
+May 16 19:11 : update: added resources/stereo_test_sounds/left_right_stereo_test.mp3
+May 16 19:11 : update: added resources/stereo_test_sounds/channel_stereo_test.mp3
+May 16 19:11 : update: added resources/alarm.wav
+Audio File Library: '/home/d/workspace/castizer-control/audiofiles/resources/encendido_completado.wav': unrecognized audio file format [error 0]
+May 16 19:11 : ffmpeg/mp3: Estimating duration from bitrate, this may be inaccurate
+May 16 19:11 : update: added resources/encendido_completado.wav
+May 16 19:11 : update: added resources/sleep.wav
+May 16 19:11 : update: added resources/2.wav
+May 16 19:11 : update: added resources/wakeup.wav
+May 16 19:11 : update: added resources/other/desktop-logout.ogg
+May 16 19:11 : update: added resources/other/desktop-login.ogg
+May 16 19:11 : update: added resources/other/dialog-warning.oga
+May 16 19:11 : update: added resources/other/button-pressed.ogg
+May 16 19:11 : update: added resources/other/service-login.oga
+May 16 19:11 : update: added resources/other/phone-incoming-call.oga
+May 16 19:11 : update: added resources/other/test.wav
+May 16 19:11 : update: added resources/other/glass.ogg
+May 16 19:11 : update: added resources/other/message-new-instant.oga
+May 16 19:11 : update: added resources/other/service-logout.oga
+May 16 19:11 : update: added resources/other/dialog-information.oga
+May 16 19:11 : update: added resources/other/message.oga
+May 16 19:11 : update: added resources/other/phone-outgoing-calling.oga
+May 16 19:11 : update: added resources/other/Noise.wav
+May 16 19:11 : update: added resources/other/sonar.ogg
+May 16 19:11 : update: added resources/other/drip.ogg
+Audio File Library: '/home/d/workspace/castizer-control/audiofiles/resources/other/encendido_completado.wav': unrecognized audio file format [error 0]
+May 16 19:11 : ffmpeg/mp3: Estimating duration from bitrate, this may be inaccurate
+May 16 19:11 : update: added resources/other/encendido_completado.wav
+May 16 19:11 : update: added resources/other/trash-empty.oga
+May 16 19:11 : update: added resources/other/device-removed.oga
+May 16 19:11 : update: added resources/other/device-added.oga
+May 16 19:11 : update: added resources/other/suspend-error.oga
+May 16 19:11 : update: added resources/other/bell.oga
+May 16 19:11 : update: added resources/other/audio-volume-change.oga
+May 16 19:11 : update: added resources/other/complete.oga
+May 16 19:11 : update: added resources/other/camera-shutter.oga
+May 16 19:11 : update: added resources/other/phone-outgoing-busy.oga
+May 16 19:11 : update: added resources/3.wav
+May 16 19:11 : update: updating pablo/18 S&M (Dave Aude Radio Edit).mp3
+May 16 19:11 : update: added pablo/2-15 This Is The Life.mp3
+May 16 19:11 : update: added pablo/hello.mp3
+May 16 19:27 : update: added resources/mac/Startup1.wav
+May 16 19:27 : update: added resources/mac/1.wav
+May 16 19:27 : update: added resources/mac/Startup2.wav
+May 16 19:27 : update: added resources/mac/4.wav
+May 16 19:27 : update: added resources/mac/2.wav
+May 16 19:27 : update: added resources/mac/3.wav
+May 16 19:27 : update: added resources/dreamcast.wav
+May 16 19:27 : output: Failed to open "My ALSA Device" [alsa]: Failed to open ALSA device "hw:0,0": Device or resource busy
+May 16 19:34 : config: option 'mixer_device' on line 19 was not recognized
+May 16 19:34 : config: option 'mixer_control' on line 20 was not recognized
+May 16 19:34 : config: option 'mixer_index' on line 21 was not recognized
+May 16 19:34 : avahi: Service 'Music Player' successfully established.
+May 16 19:35 : config: option 'mixer_device' on line 19 was not recognized
+May 16 19:35 : config: option 'mixer_control' on line 20 was not recognized
+May 16 19:35 : config: option 'mixer_index' on line 21 was not recognized
+May 16 19:35 : avahi: Service 'Music Player' successfully established.
+May 16 19:36 : player_thread: played "resources/dreamcast.wav"
+May 16 19:36 : player_thread: played "resources/dreamcast.wav"
+May 16 19:36 : player_thread: played "resources/dreamcast.wav"
+May 16 19:42 : config: option 'mixer_device' on line 19 was not recognized
+May 16 19:42 : config: option 'mixer_control' on line 20 was not recognized
+May 16 19:42 : config: option 'mixer_index' on line 21 was not recognized
+May 16 19:42 : avahi: Service 'Music Player' successfully established.
+May 16 19:43 : config: option 'mixer_device' on line 19 was not recognized
+May 16 19:43 : config: option 'mixer_control' on line 20 was not recognized
+May 16 19:43 : config: option 'mixer_index' on line 21 was not recognized
+May 16 19:43 : avahi: Service 'Music Player' successfully established.
+May 16 20:16 : update: added resources/test.wav
+May 16 20:17 : update: added resources/sonar.wav
+May 16 20:22 : config: option 'mixer_device' on line 19 was not recognized
+May 16 20:22 : config: option 'mixer_control' on line 20 was not recognized
+May 16 20:22 : config: option 'mixer_index' on line 21 was not recognized
+May 16 20:22 : avahi: Service 'Music Player' successfully established.
+May 16 20:24 : output: Failed to open "My ALSA Device" [alsa]: Failed to open ALSA device "hw:0,0": Device or resource busy
+May 16 20:24 : player_thread: problems opening audio device while playing "with_or_without_you.mp3"
+May 16 20:27 : config: option 'mixer_device' on line 19 was not recognized
+May 16 20:27 : config: option 'mixer_control' on line 20 was not recognized
+May 16 20:27 : config: option 'mixer_index' on line 21 was not recognized
+May 16 20:27 : avahi: Service 'Music Player' successfully established.
+May 16 20:38 : config: option 'mixer_device' on line 19 was not recognized
+May 16 20:38 : config: option 'mixer_control' on line 20 was not recognized
+May 16 20:38 : config: option 'mixer_index' on line 21 was not recognized
+May 16 20:38 : avahi: Service 'Music Player' successfully established.
+May 16 20:39 : config: option 'mixer_device' on line 19 was not recognized
+May 16 20:39 : config: option 'mixer_control' on line 20 was not recognized
+May 16 20:39 : config: option 'mixer_index' on line 21 was not recognized
+May 16 20:39 : avahi: Service 'Music Player' successfully established.
+May 16 20:39 : config: option 'mixer_device' on line 19 was not recognized
+May 16 20:39 : config: option 'mixer_control' on line 20 was not recognized
+May 16 20:39 : config: option 'mixer_index' on line 21 was not recognized
+May 16 20:39 : avahi: Service 'Music Player' successfully established.
+May 16 20:41 : config: option 'mixer_device' on line 19 was not recognized
+May 16 20:41 : config: option 'mixer_control' on line 20 was not recognized
+May 16 20:41 : config: option 'mixer_index' on line 21 was not recognized
+May 16 20:41 : avahi: Service 'Music Player' successfully established.
+May 16 20:42 : config: option 'mixer_device' on line 19 was not recognized
+May 16 20:42 : config: option 'mixer_control' on line 20 was not recognized
+May 16 20:42 : config: option 'mixer_index' on line 21 was not recognized
+May 16 20:42 : avahi: Service 'Music Player' successfully established.
+May 16 20:43 : config: option 'mixer_device' on line 19 was not recognized
+May 16 20:43 : config: option 'mixer_control' on line 20 was not recognized
+May 16 20:43 : config: option 'mixer_index' on line 21 was not recognized
+May 16 20:43 : avahi: Service 'Music Player' successfully established.
+May 16 20:44 : output: Failed to open "My ALSA Device" [alsa]: Failed to open ALSA device "hw:0,0": Device or resource busy
+May 16 20:44 : player_thread: problems opening audio device while playing "resources/sonar.wav"
+May 16 20:44 : config: option 'mixer_device' on line 19 was not recognized
+May 16 20:44 : config: option 'mixer_control' on line 20 was not recognized
+May 16 20:44 : config: option 'mixer_index' on line 21 was not recognized
+May 16 20:45 : avahi: Service 'Music Player' successfully established.
+May 16 20:45 : config: option 'mixer_device' on line 19 was not recognized
+May 16 20:45 : config: option 'mixer_control' on line 20 was not recognized
+May 16 20:45 : config: option 'mixer_index' on line 21 was not recognized
+May 16 20:45 : avahi: Service 'Music Player' successfully established.
+May 16 20:50 : config: option 'mixer_device' on line 19 was not recognized
+May 16 20:50 : config: option 'mixer_control' on line 20 was not recognized
+May 16 20:50 : config: option 'mixer_index' on line 21 was not recognized
+May 16 20:50 : avahi: Service 'Music Player' successfully established.
+Audio File Library: unrecognized audio file format [error 0]
+May 16 20:50 : audiofile: failed to input stream
+May 16 20:50 : ffmpeg/mp3: Estimating duration from bitrate, this may be inaccurate
+Audio File Library: unrecognized audio file format [error 0]
+May 16 20:50 : audiofile: failed to input stream
+May 16 20:50 : ffmpeg/mp3: Estimating duration from bitrate, this may be inaccurate
+Audio File Library: unrecognized audio file format [error 0]
+May 16 20:51 : audiofile: failed to input stream
+May 16 20:51 : ffmpeg/mp3: Estimating duration from bitrate, this may be inaccurate
+May 16 20:55 : player_thread: played "emigrante.mp3"
+May 16 21:07 : update: added /Survivor - Eye Of The Tiger.mp3
+May 16 21:07 : update: added /Europe - The Final Countdown.mp3
+May 16 22:47 : config: option 'mixer_device' on line 19 was not recognized
+May 16 22:47 : config: option 'mixer_control' on line 20 was not recognized
+May 16 22:47 : config: option 'mixer_index' on line 21 was not recognized
+May 16 22:47 : avahi: Service 'Music Player' successfully established.
+May 16 22:47 : config: option 'mixer_device' on line 19 was not recognized
+May 16 22:47 : config: option 'mixer_control' on line 20 was not recognized
+May 16 22:47 : config: option 'mixer_index' on line 21 was not recognized
+May 16 22:47 : avahi: Service 'Music Player' successfully established.
+May 16 22:48 : config: option 'mixer_device' on line 19 was not recognized
+May 16 22:48 : config: option 'mixer_control' on line 20 was not recognized
+May 16 22:48 : config: option 'mixer_index' on line 21 was not recognized
+May 16 22:48 : avahi: Service 'Music Player' successfully established.
+May 16 22:48 : config: option 'mixer_device' on line 19 was not recognized
+May 16 22:48 : config: option 'mixer_control' on line 20 was not recognized
+May 16 22:48 : config: option 'mixer_index' on line 21 was not recognized
+May 16 22:48 : avahi: Service 'Music Player' successfully established.
+May 20 09:14 : config: option 'mixer_device' on line 19 was not recognized
+May 20 09:14 : config: option 'mixer_control' on line 20 was not recognized
+May 20 09:14 : config: option 'mixer_index' on line 21 was not recognized
+May 20 09:14 : avahi: Service 'Music Player' successfully established.
+May 20 09:15 : config: option 'mixer_device' on line 19 was not recognized
+May 20 09:15 : config: option 'mixer_control' on line 20 was not recognized
+May 20 09:15 : config: option 'mixer_index' on line 21 was not recognized
+May 20 09:15 : avahi: Service 'Music Player' successfully established.
+May 20 09:20 : config: option 'mixer_device' on line 19 was not recognized
+May 20 09:20 : config: option 'mixer_control' on line 20 was not recognized
+May 20 09:20 : config: option 'mixer_index' on line 21 was not recognized
+May 20 09:20 : avahi: Service 'Music Player' successfully established.
+May 20 09:23 : config: option 'mixer_device' on line 19 was not recognized
+May 20 09:23 : config: option 'mixer_control' on line 20 was not recognized
+May 20 09:23 : config: option 'mixer_index' on line 21 was not recognized
+May 20 09:23 : avahi: Service 'Music Player' successfully established.
+May 20 09:25 : player_thread: played "resources/sonar.wav"
+May 20 09:25 : player_thread: played "resources/sonar.wav"
+May 20 09:25 : player_thread: played "resources/sonar.wav"
+May 20 09:58 : config: option 'mixer_device' on line 19 was not recognized
+May 20 09:58 : config: option 'mixer_control' on line 20 was not recognized
+May 20 09:58 : config: option 'mixer_index' on line 21 was not recognized
+May 20 09:58 : avahi: Service 'Music Player' successfully established.
+May 20 09:58 : config: option 'mixer_device' on line 19 was not recognized
+May 20 09:58 : config: option 'mixer_control' on line 20 was not recognized
+May 20 09:58 : config: option 'mixer_index' on line 21 was not recognized
+May 20 09:58 : avahi: Service 'Music Player' successfully established.
+May 20 09:59 : config: option 'mixer_device' on line 19 was not recognized
+May 20 09:59 : config: option 'mixer_control' on line 20 was not recognized
+May 20 09:59 : config: option 'mixer_index' on line 21 was not recognized
+May 20 09:59 : avahi: Service 'Music Player' successfully established.
+May 20 16:27 : config: option 'mixer_device' on line 19 was not recognized
+May 20 16:27 : config: option 'mixer_control' on line 20 was not recognized
+May 20 16:27 : config: option 'mixer_index' on line 21 was not recognized
+May 20 16:27 : avahi: Service 'Music Player' successfully established.
+May 21 09:58 : config: option 'mixer_device' on line 19 was not recognized
+May 21 09:58 : config: option 'mixer_control' on line 20 was not recognized
+May 21 09:58 : config: option 'mixer_index' on line 21 was not recognized
+May 21 09:58 : avahi: Service 'Music Player' successfully established.
+May 21 10:31 : config: option 'mixer_device' on line 19 was not recognized
+May 21 10:31 : config: option 'mixer_control' on line 20 was not recognized
+May 21 10:31 : config: option 'mixer_index' on line 21 was not recognized
+May 21 10:31 : avahi: Service 'Music Player' successfully established.
+May 21 10:37 : config: option 'mixer_device' on line 19 was not recognized
+May 21 10:37 : config: option 'mixer_control' on line 20 was not recognized
+May 21 10:37 : config: option 'mixer_index' on line 21 was not recognized
+May 21 10:37 : avahi: Service 'Music Player' successfully established.
+May 21 10:39 : config: option 'mixer_device' on line 19 was not recognized
+May 21 10:39 : config: option 'mixer_control' on line 20 was not recognized
+May 21 10:39 : config: option 'mixer_index' on line 21 was not recognized
+May 21 10:39 : avahi: Service 'Music Player' successfully established.
+May 21 10:42 : config: option 'mixer_device' on line 19 was not recognized
+May 21 10:42 : config: option 'mixer_control' on line 20 was not recognized
+May 21 10:42 : config: option 'mixer_index' on line 21 was not recognized
+May 21 10:42 : avahi: Service 'Music Player' successfully established.
+May 21 10:42 : config: option 'mixer_device' on line 19 was not recognized
+May 21 10:42 : config: option 'mixer_control' on line 20 was not recognized
+May 21 10:42 : config: option 'mixer_index' on line 21 was not recognized
+May 21 10:42 : avahi: Service 'Music Player' successfully established.
+May 21 10:43 : config: option 'mixer_device' on line 19 was not recognized
+May 21 10:43 : config: option 'mixer_control' on line 20 was not recognized
+May 21 10:43 : config: option 'mixer_index' on line 21 was not recognized
+May 21 10:43 : avahi: Service 'Music Player' successfully established.
+May 21 10:44 : config: option 'mixer_device' on line 19 was not recognized
+May 21 10:44 : config: option 'mixer_control' on line 20 was not recognized
+May 21 10:44 : config: option 'mixer_index' on line 21 was not recognized
+May 21 10:44 : avahi: Service 'Music Player' successfully established.
+May 21 10:53 : config: option 'mixer_device' on line 19 was not recognized
+May 21 10:53 : config: option 'mixer_control' on line 20 was not recognized
+May 21 10:53 : config: option 'mixer_index' on line 21 was not recognized
+May 21 10:53 : avahi: Service 'Music Player' successfully established.
+May 21 16:18 : config: option 'mixer_device' on line 19 was not recognized
+May 21 16:18 : config: option 'mixer_control' on line 20 was not recognized
+May 21 16:18 : config: option 'mixer_index' on line 21 was not recognized
+May 21 16:18 : avahi: Service 'Music Player' successfully established.
+May 21 16:21 : config: option 'mixer_device' on line 19 was not recognized
+May 21 16:21 : config: option 'mixer_control' on line 20 was not recognized
+May 21 16:21 : config: option 'mixer_index' on line 21 was not recognized
+May 21 16:21 : avahi: Service 'Music Player' successfully established.
+May 21 16:28 : config: option 'mixer_device' on line 19 was not recognized
+May 21 16:28 : config: option 'mixer_control' on line 20 was not recognized
+May 21 16:28 : config: option 'mixer_index' on line 21 was not recognized
+May 21 16:28 : avahi: Service 'Music Player' successfully established.
+May 21 16:45 : config: option 'mixer_device' on line 19 was not recognized
+May 21 16:45 : config: option 'mixer_control' on line 20 was not recognized
+May 21 16:45 : config: option 'mixer_index' on line 21 was not recognized
+May 21 16:45 : avahi: Service 'Music Player' successfully established.
+May 21 16:51 : config: option 'mixer_device' on line 19 was not recognized
+May 21 16:51 : config: option 'mixer_control' on line 20 was not recognized
+May 21 16:51 : config: option 'mixer_index' on line 21 was not recognized
+May 21 16:51 : avahi: Service 'Music Player' successfully established.
+May 21 16:57 : config: option 'mixer_device' on line 19 was not recognized
+May 21 16:57 : config: option 'mixer_control' on line 20 was not recognized
+May 21 16:57 : config: option 'mixer_index' on line 21 was not recognized
+May 21 16:57 : avahi: Service 'Music Player' successfully established.
+May 21 18:41 : avahi: Client Disconnected, will reconnect shortly
+May 23 10:00 : config: option 'mixer_device' on line 19 was not recognized
+May 23 10:00 : config: option 'mixer_control' on line 20 was not recognized
+May 23 10:00 : config: option 'mixer_index' on line 21 was not recognized
+May 23 10:00 : avahi: Service 'Music Player' successfully established.
+May 23 10:04 : config: option 'mixer_device' on line 19 was not recognized
+May 23 10:04 : config: option 'mixer_control' on line 20 was not recognized
+May 23 10:04 : config: option 'mixer_index' on line 21 was not recognized
+May 23 10:04 : avahi: Service 'Music Player' successfully established.
+May 28 16:48 : config: option 'mixer_device' on line 19 was not recognized
+May 28 16:48 : config: option 'mixer_control' on line 20 was not recognized
+May 28 16:48 : config: option 'mixer_index' on line 21 was not recognized
+May 28 16:48 : avahi: Service 'Music Player' successfully established.
+May 28 16:57 : config: option 'mixer_device' on line 19 was not recognized
+May 28 16:57 : config: option 'mixer_control' on line 20 was not recognized
+May 28 16:57 : config: option 'mixer_index' on line 21 was not recognized
+May 28 16:57 : avahi: Service 'Music Player' successfully established.
+Jun 03 17:52 : config: option 'mixer_device' on line 19 was not recognized
+Jun 03 17:52 : config: option 'mixer_control' on line 20 was not recognized
+Jun 03 17:52 : config: option 'mixer_index' on line 21 was not recognized
+Jun 03 17:52 : avahi: Service 'Music Player' successfully established.
+Jun 03 18:09 : config: option 'mixer_device' on line 19 was not recognized
+Jun 03 18:09 : config: option 'mixer_control' on line 20 was not recognized
+Jun 03 18:09 : config: option 'mixer_index' on line 21 was not recognized
+Jun 03 18:09 : avahi: Service 'Music Player' successfully established.
+Audio File Library: unrecognized audio file format [error 0]
+Jun 03 18:10 : audiofile: failed to input stream
+Jun 03 18:10 : ffmpeg/mp3: Estimating duration from bitrate, this may be inaccurate
+Jun 03 18:14 : config: option 'mixer_device' on line 19 was not recognized
+Jun 03 18:14 : config: option 'mixer_control' on line 20 was not recognized
+Jun 03 18:14 : config: option 'mixer_index' on line 21 was not recognized
+Jun 03 18:14 : avahi: Service 'Music Player' successfully established.
+Jul 14 09:14 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 09:14 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 09:14 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 09:14 : avahi: Service 'Music Player' successfully established.
+Jul 14 09:15 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 09:15 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 09:15 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 09:15 : avahi: Service 'Music Player' successfully established.
+Jul 14 09:15 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 09:15 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 09:15 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 09:15 : avahi: Service 'Music Player' successfully established.
+Audio File Library: unrecognized audio file format [error 0]
+Jul 14 09:16 : audiofile: failed to input stream
+Jul 14 09:16 : ffmpeg/mp3: Estimating duration from bitrate, this may be inaccurate
+Audio File Library: unrecognized audio file format [error 0]
+Jul 14 09:16 : audiofile: failed to input stream
+Jul 14 09:16 : ffmpeg/mp3: Estimating duration from bitrate, this may be inaccurate
+Audio File Library: unrecognized audio file format [error 0]
+Jul 14 09:16 : audiofile: failed to input stream
+Jul 14 09:16 : ffmpeg/mp3: Estimating duration from bitrate, this may be inaccurate
+Audio File Library: unrecognized audio file format [error 0]
+Jul 14 09:16 : audiofile: failed to input stream
+Jul 14 09:16 : ffmpeg/mp3: Estimating duration from bitrate, this may be inaccurate
+Audio File Library: unrecognized audio file format [error 0]
+Jul 14 09:17 : audiofile: failed to input stream
+Jul 14 09:17 : ffmpeg/mp3: Estimating duration from bitrate, this may be inaccurate
+Jul 14 09:29 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 09:29 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 09:29 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 09:29 : avahi: Service 'Music Player' successfully established.
+Audio File Library: unrecognized audio file format [error 0]
+Jul 14 09:29 : audiofile: failed to input stream
+Jul 14 09:29 : ffmpeg/mp3: Estimating duration from bitrate, this may be inaccurate
+Jul 14 10:20 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 10:20 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 10:20 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 10:20 : avahi: Service 'Music Player' successfully established.
+Jul 14 10:22 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 10:22 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 10:22 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 10:22 : avahi: Service 'Music Player' successfully established.
+Jul 14 10:24 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 10:24 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 10:24 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 10:24 : avahi: Service 'Music Player' successfully established.
+Jul 14 10:25 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 10:25 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 10:25 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 10:25 : avahi: Service 'Music Player' successfully established.
+Jul 14 10:26 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 10:26 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 10:26 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 10:26 : avahi: Service 'Music Player' successfully established.
+Jul 14 10:30 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 10:30 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 10:30 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 10:30 : avahi: Service 'Music Player' successfully established.
+Jul 14 10:35 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 10:35 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 10:35 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 10:35 : avahi: Service 'Music Player' successfully established.
+Audio File Library: unrecognized audio file format [error 0]
+Jul 14 10:35 : audiofile: failed to input stream
+Jul 14 10:35 : ffmpeg/mp3: Estimating duration from bitrate, this may be inaccurate
+Jul 14 10:37 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 10:37 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 10:37 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 10:37 : avahi: Service 'Music Player' successfully established.
+Jul 14 10:48 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 10:48 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 10:48 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 10:48 : avahi: Service 'Music Player' successfully established.
+Jul 14 10:48 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 10:48 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 10:48 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 10:48 : avahi: Service 'Music Player' successfully established.
+Jul 14 10:56 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 10:56 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 10:56 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 10:56 : avahi: Service 'Music Player' successfully established.
+Audio File Library: unrecognized audio file format [error 0]
+Jul 14 10:57 : audiofile: failed to input stream
+Jul 14 10:57 : ffmpeg/mp3: Estimating duration from bitrate, this may be inaccurate
+Jul 14 11:55 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 11:55 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 11:55 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 11:55 : avahi: Service 'Music Player' successfully established.
+Jul 14 12:01 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 12:01 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 12:01 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 12:01 : avahi: Service 'Music Player' successfully established.
+Jul 14 12:43 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 12:43 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 12:43 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 12:43 : avahi: Service 'Music Player' successfully established.
+Jul 14 14:18 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 14:18 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 14:18 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 14:18 : avahi: Service 'Music Player' successfully established.
+Jul 14 14:20 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 14:20 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 14:20 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 14:20 : avahi: Service 'Music Player' successfully established.
+Jul 14 14:20 : update: added 1/Europe - The Final Countdown.mp3
+Jul 14 14:22 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 14:22 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 14:22 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 14:22 : output: Failed to open "My ALSA Device" [alsa]: Failed to open ALSA device "hw:0,0": Device or resource busy
+Jul 14 14:22 : player_thread: problems opening audio device while playing "1/Europe - The Final Countdown.mp3"
+Jul 14 14:22 : output: Failed to open "My ALSA Device" [alsa]: Failed to open ALSA device "hw:0,0": Device or resource busy
+Jul 14 14:22 : player_thread: problems opening audio device while playing "resources/sonar.wav"
+Jul 14 14:22 : avahi: Service 'Music Player' successfully established.
+Jul 14 14:22 : output: Failed to open "My ALSA Device" [alsa]: Failed to open ALSA device "hw:0,0": Device or resource busy
+Jul 14 14:22 : player_thread: problems opening audio device while playing "animal_Instinct.mp3"
+Jul 14 14:23 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 14:23 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 14:23 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 14:23 : avahi: Service 'Music Player' successfully established.
+Jul 14 14:24 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 14:24 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 14:24 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 14:24 : avahi: Service 'Music Player' successfully established.
+Jul 14 14:28 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 14:28 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 14:28 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 14:28 : avahi: Service 'Music Player' successfully established.
+Jul 14 14:30 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 14:30 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 14:30 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 14:30 : avahi: Service 'Music Player' successfully established.
+Jul 14 14:30 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 14:30 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 14:30 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 14:30 : avahi: Service 'Music Player' successfully established.
+Jul 14 14:32 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 14:32 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 14:32 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 14:32 : avahi: Service 'Music Player' successfully established.
+Jul 14 14:36 : update: added 2/Survivor - Eye Of The Tiger.mp3
+Jul 14 14:36 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 14:36 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 14:36 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 14:36 : avahi: Service 'Music Player' successfully established.
+Jul 14 14:38 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 14:38 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 14:38 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 14:38 : avahi: Service 'Music Player' successfully established.
+Jul 14 14:47 : update: added 3/hello.mp3
+Jul 14 14:47 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 14:47 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 14:47 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 14:47 : avahi: Service 'Music Player' successfully established.
+Jul 14 14:54 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 14:54 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 14:54 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 14:54 : avahi: Service 'Music Player' successfully established.
+Jul 14 14:57 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 14:57 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 14:57 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 14:57 : output: Failed to open "My ALSA Device" [alsa]: Failed to open ALSA device "hw:0,0": Device or resource busy
+Jul 14 14:57 : player_thread: problems opening audio device while playing "resources/sonar.wav"
+Jul 14 14:57 : avahi: Service 'Music Player' successfully established.
+Jul 14 14:58 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 14:58 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 14:58 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 14:58 : avahi: Service 'Music Player' successfully established.
+Jul 14 15:12 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 15:12 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 15:12 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 15:12 : avahi: Service 'Music Player' successfully established.
+Jul 14 15:18 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 15:18 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 15:18 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 15:18 : avahi: Service 'Music Player' successfully established.
+Jul 14 15:21 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 15:21 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 15:21 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 15:21 : avahi: Service 'Music Player' successfully established.
+Jul 14 15:22 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 15:22 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 15:22 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 15:22 : avahi: Service 'Music Player' successfully established.
+Jul 14 15:23 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 15:23 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 15:23 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 15:23 : avahi: Service 'Music Player' successfully established.
+Jul 14 15:23 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 15:23 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 15:23 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 15:23 : avahi: Service 'Music Player' successfully established.
+Jul 14 15:24 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 15:24 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 15:24 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 15:24 : avahi: Service 'Music Player' successfully established.
+Jul 14 15:25 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 15:25 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 15:25 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : avahi: Service 'Music Player' successfully established.
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:25 : player_thread: played "resources/sonar.wav"
+Jul 14 15:26 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 15:26 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 15:26 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 15:26 : output: Failed to open "My ALSA Device" [alsa]: Failed to open ALSA device "hw:0,0": Device or resource busy
+Jul 14 15:26 : player_thread: problems opening audio device while playing "resources/sonar.wav"
+Jul 14 15:26 : avahi: Service 'Music Player' successfully established.
+Jul 14 15:26 : output: Failed to open "My ALSA Device" [alsa]: Failed to open ALSA device "hw:0,0": Device or resource busy
+Jul 14 15:26 : player_thread: problems opening audio device while playing "2/Survivor - Eye Of The Tiger.mp3"
+Jul 14 15:26 : output: Failed to open "My ALSA Device" [alsa]: Failed to open ALSA device "hw:0,0": Device or resource busy
+Jul 14 15:26 : player_thread: problems opening audio device while playing "3/hello.mp3"
+Jul 14 15:57 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 15:57 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 15:57 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 15:57 : avahi: Service 'Music Player' successfully established.
+Jul 14 15:59 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 15:59 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 15:59 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 15:59 : avahi: Service 'Music Player' successfully established.
+Jul 14 16:00 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 16:00 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 16:00 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 16:00 : avahi: Service 'Music Player' successfully established.
+Jul 14 17:02 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 17:02 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 17:02 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 17:02 : avahi: Service 'Music Player' successfully established.
+Audio File Library: unrecognized audio file format [error 0]
+Jul 14 17:03 : audiofile: failed to input stream
+Jul 14 17:03 : ffmpeg/mp3: Estimating duration from bitrate, this may be inaccurate
+Jul 14 17:07 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 17:07 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 17:07 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 17:07 : avahi: Service 'Music Player' successfully established.
+Jul 14 17:07 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 17:07 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 17:07 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 17:07 : avahi: Service 'Music Player' successfully established.
+Jul 14 17:07 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 17:07 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 17:07 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 17:07 : avahi: Service 'Music Player' successfully established.
+Jul 14 17:12 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 17:12 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 17:12 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 17:12 : avahi: Service 'Music Player' successfully established.
+Jul 14 17:17 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 17:17 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 17:17 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 17:17 : avahi: Service 'Music Player' successfully established.
+Jul 14 17:25 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 17:25 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 17:25 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 17:25 : avahi: Service 'Music Player' successfully established.
+Jul 14 17:26 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 17:26 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 17:26 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 17:26 : avahi: Service 'Music Player' successfully established.
+Jul 14 17:29 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 17:29 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 17:29 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 17:29 : avahi: Service 'Music Player' successfully established.
+Jul 14 17:31 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 17:31 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 17:31 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 17:31 : avahi: Service 'Music Player' successfully established.
+Jul 14 17:35 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 17:35 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 17:35 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 17:35 : avahi: Service 'Music Player' successfully established.
+Jul 14 17:39 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 17:39 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 17:39 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 17:39 : avahi: Service 'Music Player' successfully established.
+Jul 14 17:42 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 17:42 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 17:42 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 17:42 : avahi: Service 'Music Player' successfully established.
+Jul 14 18:23 : config: option 'mixer_device' on line 19 was not recognized
+Jul 14 18:23 : config: option 'mixer_control' on line 20 was not recognized
+Jul 14 18:23 : config: option 'mixer_index' on line 21 was not recognized
+Jul 14 18:24 : avahi: Service 'Music Player' successfully established.
+Jul 29 18:38 : config: option 'mixer_device' on line 19 was not recognized
+Jul 29 18:38 : config: option 'mixer_control' on line 20 was not recognized
+Jul 29 18:38 : config: option 'mixer_index' on line 21 was not recognized
+Jul 29 18:38 : avahi: Service 'Music Player' successfully established.
+Jul 29 18:40 : config: option 'mixer_device' on line 19 was not recognized
+Jul 29 18:40 : config: option 'mixer_control' on line 20 was not recognized
+Jul 29 18:40 : config: option 'mixer_index' on line 21 was not recognized
+Jul 29 18:40 : avahi: Service 'Music Player' successfully established.
+Jul 29 18:42 : config: option 'mixer_device' on line 19 was not recognized
+Jul 29 18:42 : config: option 'mixer_control' on line 20 was not recognized
+Jul 29 18:42 : config: option 'mixer_index' on line 21 was not recognized
+Jul 29 18:42 : avahi: Service 'Music Player' successfully established.
+Jul 29 18:43 : config: option 'mixer_device' on line 19 was not recognized
+Jul 29 18:43 : config: option 'mixer_control' on line 20 was not recognized
+Jul 29 18:43 : config: option 'mixer_index' on line 21 was not recognized
+Jul 29 18:43 : avahi: Service 'Music Player' successfully established.
+Jul 29 18:54 : config: option 'mixer_device' on line 19 was not recognized
+Jul 29 18:54 : config: option 'mixer_control' on line 20 was not recognized
+Jul 29 18:54 : config: option 'mixer_index' on line 21 was not recognized
+Jul 29 18:54 : avahi: Service 'Music Player' successfully established.
+Jul 29 18:55 : config: option 'mixer_device' on line 19 was not recognized
+Jul 29 18:55 : config: option 'mixer_control' on line 20 was not recognized
+Jul 29 18:55 : config: option 'mixer_index' on line 21 was not recognized
+Jul 29 18:55 : avahi: Service 'Music Player' successfully established.
+Jul 29 18:55 : config: option 'mixer_device' on line 19 was not recognized
+Jul 29 18:55 : config: option 'mixer_control' on line 20 was not recognized
+Jul 29 18:55 : config: option 'mixer_index' on line 21 was not recognized
+Jul 29 18:55 : avahi: Service 'Music Player' successfully established.
+Jul 29 18:57 : config: option 'mixer_device' on line 19 was not recognized
+Jul 29 18:57 : config: option 'mixer_control' on line 20 was not recognized
+Jul 29 18:57 : config: option 'mixer_index' on line 21 was not recognized
+Jul 29 18:57 : avahi: Service 'Music Player' successfully established.
+Jul 29 19:51 : config: option 'mixer_device' on line 19 was not recognized
+Jul 29 19:51 : config: option 'mixer_control' on line 20 was not recognized
+Jul 29 19:51 : config: option 'mixer_index' on line 21 was not recognized
+Jul 29 19:51 : avahi: Service 'Music Player' successfully established.
+Jul 29 19:55 : config: option 'mixer_device' on line 19 was not recognized
+Jul 29 19:55 : config: option 'mixer_control' on line 20 was not recognized
+Jul 29 19:55 : config: option 'mixer_index' on line 21 was not recognized
+Jul 29 19:55 : avahi: Service 'Music Player' successfully established.
+Sep 28 10:00 : config: option 'mixer_device' on line 19 was not recognized
+Sep 28 10:00 : config: option 'mixer_control' on line 20 was not recognized
+Sep 28 10:00 : config: option 'mixer_index' on line 21 was not recognized
+Sep 28 10:00 : avahi: Service 'Music Player' successfully established.
+Sep 28 10:01 : output: Failed to open "My ALSA Device" [alsa]: Failed to open ALSA device "hw:0,0": Device or resource busy
+Sep 28 10:01 : player_thread: problems opening audio device while playing "1/Europe - The Final Countdown.mp3"
+Sep 28 10:01 : output: Failed to open "My ALSA Device" [alsa]: Failed to open ALSA device "hw:0,0": Device or resource busy
+Sep 28 10:01 : player_thread: problems opening audio device while playing "2/Survivor - Eye Of The Tiger.mp3"
+Sep 28 10:02 : config: option 'mixer_device' on line 19 was not recognized
+Sep 28 10:02 : config: option 'mixer_control' on line 20 was not recognized
+Sep 28 10:02 : config: option 'mixer_index' on line 21 was not recognized
+Sep 28 10:02 : avahi: Service 'Music Player' successfully established.
+Sep 28 11:40 : config: option 'mixer_device' on line 19 was not recognized
+Sep 28 11:40 : config: option 'mixer_control' on line 20 was not recognized
+Sep 28 11:40 : config: option 'mixer_index' on line 21 was not recognized
+Sep 28 11:40 : avahi: Service 'Music Player' successfully established.
+Oct 06 11:38 : config: option 'mixer_device' on line 19 was not recognized
+Oct 06 11:38 : config: option 'mixer_control' on line 20 was not recognized
+Oct 06 11:38 : config: option 'mixer_index' on line 21 was not recognized
+Oct 06 11:38 : avahi: Service 'Music Player' successfully established.
+Oct 06 11:40 : output: Failed to open "My ALSA Device" [alsa]: Failed to open ALSA device "hw:0,0": Device or resource busy
+Oct 06 11:40 : player_thread: problems opening audio device while playing "2/Survivor - Eye Of The Tiger.mp3"
+Oct 06 11:41 : config: option 'mixer_device' on line 19 was not recognized
+Oct 06 11:41 : config: option 'mixer_control' on line 20 was not recognized
+Oct 06 11:41 : config: option 'mixer_index' on line 21 was not recognized
+Oct 06 11:41 : avahi: Service 'Music Player' successfully established.
+Oct 06 11:41 : config: option 'mixer_device' on line 19 was not recognized
+Oct 06 11:41 : config: option 'mixer_control' on line 20 was not recognized
+Oct 06 11:41 : config: option 'mixer_index' on line 21 was not recognized
+Oct 06 11:41 : output: Failed to open "My ALSA Device" [alsa]: Failed to open ALSA device "hw:0,0": Device or resource busy
+Oct 06 11:41 : player_thread: problems opening audio device while playing "resources/sonar.wav"
+Oct 06 11:41 : avahi: Service 'Music Player' successfully established.
+Oct 06 11:43 : config: option 'mixer_device' on line 19 was not recognized
+Oct 06 11:43 : config: option 'mixer_control' on line 20 was not recognized
+Oct 06 11:43 : config: option 'mixer_index' on line 21 was not recognized
+Oct 06 11:43 : avahi: Service 'Music Player' successfully established.
+Oct 06 11:43 : config: option 'mixer_device' on line 19 was not recognized
+Oct 06 11:43 : config: option 'mixer_control' on line 20 was not recognized
+Oct 06 11:43 : config: option 'mixer_index' on line 21 was not recognized
+Oct 06 11:43 : avahi: Service 'Music Player' successfully established.
+Oct 06 11:45 : config: option 'mixer_device' on line 19 was not recognized
+Oct 06 11:45 : config: option 'mixer_control' on line 20 was not recognized
+Oct 06 11:45 : config: option 'mixer_index' on line 21 was not recognized
+Oct 06 11:45 : avahi: Service 'Music Player' successfully established.
+Oct 06 11:46 : config: option 'mixer_device' on line 19 was not recognized
+Oct 06 11:46 : config: option 'mixer_control' on line 20 was not recognized
+Oct 06 11:46 : config: option 'mixer_index' on line 21 was not recognized
+Oct 06 11:46 : avahi: Service 'Music Player' successfully established.
+Oct 06 11:47 : config: option 'mixer_device' on line 19 was not recognized
+Oct 06 11:47 : config: option 'mixer_control' on line 20 was not recognized
+Oct 06 11:47 : config: option 'mixer_index' on line 21 was not recognized
+Oct 06 11:47 : avahi: Service 'Music Player' successfully established.
+Oct 06 11:48 : config: option 'mixer_device' on line 19 was not recognized
+Oct 06 11:48 : config: option 'mixer_control' on line 20 was not recognized
+Oct 06 11:48 : config: option 'mixer_index' on line 21 was not recognized
+Oct 06 11:48 : update: added resources/update_music_db.wav
+Oct 06 11:48 : update: added resources/update_network_error_other.wav
+Oct 06 11:48 : update: added resources/reset_network.wav
+Oct 06 11:48 : update: added resources/reset_network_completed.wav
+Oct 06 11:48 : update: added resources/update_music_db_completed.wav
+Oct 06 11:48 : update: added resources/update_completed.wav
+Oct 06 11:48 : update: added resources/update_uptodate.wav
+Oct 06 11:48 : update: added resources/update_network_error_internet.wav
+Oct 06 11:48 : update: added resources/update.wav
+Oct 06 11:48 : update: added resources/reset_network_error.wav
+Oct 06 11:48 : avahi: Service 'Music Player' successfully established.
+Oct 06 11:55 : config: option 'mixer_device' on line 19 was not recognized
+Oct 06 11:55 : config: option 'mixer_control' on line 20 was not recognized
+Oct 06 11:55 : config: option 'mixer_index' on line 21 was not recognized
+Oct 06 11:55 : avahi: Service 'Music Player' successfully established.
+Oct 06 12:20 : config: option 'mixer_device' on line 19 was not recognized
+Oct 06 12:20 : config: option 'mixer_control' on line 20 was not recognized
+Oct 06 12:20 : config: option 'mixer_index' on line 21 was not recognized
+Oct 06 12:20 : config: option 'mixer_device' on line 19 was not recognized
+Oct 06 12:20 : config: option 'mixer_control' on line 20 was not recognized
+Oct 06 12:20 : config: option 'mixer_index' on line 21 was not recognized
+Oct 06 12:20 : avahi: Service 'Music Player' successfully established.
+Oct 06 12:20 : config: option 'mixer_device' on line 19 was not recognized
+Oct 06 12:20 : config: option 'mixer_control' on line 20 was not recognized
+Oct 06 12:20 : config: option 'mixer_index' on line 21 was not recognized
+Oct 06 12:20 : avahi: Service 'Music Player' successfully established.
+Oct 10 08:52 : config: option 'mixer_device' on line 19 was not recognized
+Oct 10 08:52 : config: option 'mixer_control' on line 20 was not recognized
+Oct 10 08:52 : config: option 'mixer_index' on line 21 was not recognized
+Oct 10 08:52 : avahi: Service 'Music Player' successfully established.
+Oct 10 08:53 : config: option 'mixer_device' on line 19 was not recognized
+Oct 10 08:53 : config: option 'mixer_control' on line 20 was not recognized
+Oct 10 08:53 : config: option 'mixer_index' on line 21 was not recognized
+Oct 10 08:53 : avahi: Service 'Music Player' successfully established.
+Oct 10 11:21 : avahi: Client Disconnected, will reconnect shortly

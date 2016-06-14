@@ -1,0 +1,19 @@
+
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option phy 'phy0'
+	list ht_capab 'SHORT-GI-20'
+	list ht_capab 'SHORT-GI-40'
+	list ht_capab 'RX-STBC1'
+	list ht_capab 'DSSS_CCK-40'
+	option txpower '18'
+	option country 'ES'
+	option disabled '0'
+	option channel '6'
+
+config wifi-iface
+	option device 'radio0'
+	option mode 'ap'
+	option encryption 'none'
+	option ssid 'castizer'
+	option network 'castizer'
