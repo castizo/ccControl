@@ -347,6 +347,45 @@ class Controller(threading.Thread):
 
         self.restoreSoundContext()
 
+    def createJson(self):
+        import json
+                
+        json_data = { "incoming":0, "songs": [] }      
+
+        #json_data = json.loads(json_str_init)
+        print "json_str> " + str(json_data['incoming'])
+        
+        num = json_data['incoming']
+        num=num+3
+        json_data['incoming'] = num;
+        json_data['songs'].append({"sender":"sender1", "url":"song1.mp3"})
+        json_data['songs'].append({"sender":"sender2", "url":"song2.mp3"})
+        json_data['songs'].append({"sender":"sender3", "url":"song3.mp3"})
+
+        
+        with open('json_incoming_songs.txt', 'w') as outfile:
+            json.dump(json_data, outfile)
+    
+        print "************************"
+        for song in json_data['songs']:   
+            print "Sender: " + str(song['sender']) + " URL: " + str(song['url'])
+
+        json_data['songs'].pop(0) # Removes the first element
+
+        print "************************"
+
+        for song in json_data['songs']:   
+            print "Sender: " + str(song['sender']) + " URL: " + str(song['url'])
+            
+        print "************************"
+
+        #print data.songs[0].sender
+        #print data.songs[0].url
+
+        # Reading data back
+        with open('json_data.txt', 'r') as infile:
+            json_data = json.load(infile)
+        
     def nullifySoundContext(self):
         l = logging.getLogger('controller.event')
         l.debug('nullifySoundContext...')                    
@@ -508,6 +547,12 @@ class Controller(threading.Thread):
                     self.sendSong(keycode)
                 else:
                     l.debug(' Nothing is playing !')                    
+        if keycode == config.BUTTON_DEBUG:
+            if clicks == 1:
+                l.debug('BUTTON_DEBUG, 1 click')
+                self.createJson()
+            else:
+                l.debug('BUTTON_DEBUG, OTHER click')
         if keycode == config.BUTTON_STOP:
             if clicks == 1:
                 l.debug('BUTTON_STOP, 1 click')
