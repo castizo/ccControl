@@ -1,0 +1,102 @@
+--------------------------------------------------------------------------
+TODO:
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+FUTURE:
+--------------------------------------------------------------------------
+
+
+Updates: Prepare recordings
+
+		"The update process has been activated. It will take a few minutes.
+		The blinking LED indicates that the system is busy. 
+		Please, do not press any button, or unplug the Castizer from the mains during the process.
+		Once the update is completed, the Castizer will reboot, and you will here my voice again."
+
+		An error occurred during the installation.
+		Please, retry later and, if the problem persists, contact your distributor.
+
+		Castizer is not connected to the internet.
+		You need to set up a valid internet connection before updating.
+
+		Press again the button if you need instructions to do so: 
+			In order to connect Castizer to the internet, you will need a smart device
+			You can use a computer, smartphone, tablet, or any other device that allows you
+			to browse the internet.
+			Fist, make sure your Castizer is plugged in
+			Then, take your device, and look for available wifi networks
+			The "Castizer" network should be available.
+			Connect to it.
+			launch a browser, open the address: http:/castizer.local
+			and follow the onscreen instructions				
+
+Create Player class.
+
+Usar urllib2 para las funciones básicas (wget, rm, etc...)
+
+Error: when there are no playlists...
+	Play "There are no playlists" sound
+
+Error: The LED sometimes goes to blinking state
+
+When using concurrently the button and the webserver, the mpd crashes:
+	Connection lost while reading line
+	retry?
+
+Control errors:
+	No playlist exists
+	downloading updates: corrupted data, convert to int the value read...
+
+If the lists are random... the pl_current is also played !!!!
+
+Change the logger so that in the format, it automatically prepends the name of the file and function that is doing the log.
+
+Volume in the castizer goes only (effectively) from 0 to 20... scale it somehow?
+	For the moment, I have set a limit to 30
+	
+Volume overflow => play sound to indicate that you reached the limit
+	Problem is muxing two audio sources (this sound and the current playing sound)
+
+The save/restore context... should work differently when using streaming stations?
+
+--------------------------------------------------------------------------
+DONE:
+--------------------------------------------------------------------------
+
+---
+
+Update MPD library support:
+	The auto_update = yes feature does not seem to be working very well
+	keep pressed the Action button (very long) to start update
+
+---
+
+Navigate only through 6 folders/playlists
+	Created special mode, selectable with the value of the variable:
+		LIMITED_PLAYLIST_CONTROL_BASED_ON_FOLDERS
+
+Mount the second partition of the pendrive, and read the audio files from there.
+	Symbolic links have been created
+
+Special button combo is now triggered during:
+	PLAY: beeps the alarm
+	SLEEP: triggers the update
+
+The volume control:
+	If the down button can not be hold... the up button should not do it either... to avoid confusion...
+		The volume buttons recognize:
+			1 click and more than 1 click events
+			hold events do not control volume
+	I have set the upper limit for the volume to be 30 (instead of 100)
+
+---	
+
+Add second channel play (copy from castizer_menu original) to save and restore the context.
+
+Integrate the updater so that it is called from the main, with a special combo
+	<OK> special combo: Long press in the + button, while the castizer is in sleep state.
+
+Toggle the LED according to the current state
+
+--------------------------------------------------------------------------

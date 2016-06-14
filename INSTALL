@@ -1,0 +1,9 @@
+TP-LINK:
+opkg update && opkg install distribute python-openssl
+easy_install bottle dropbox peewee python-mpd2
+
+PC:
+#sudo apt-get update
+sudo apt-get install python-openssl sqlite3
+sudo easy_install bottle dropbox peewee python-mpd2 
+pip install flup
