@@ -305,7 +305,7 @@ class Controller(threading.Thread):
         l = logging.getLogger('controller.event')
         stat = self.mpd.status()
         vol = int(stat['volume'])
-        if (amount > 0) and (vol > 30):
+        if (amount > 0) and (vol > 100):
             l.debug('Volume Up event received with volume above the limit. Nothing is done.')
         else:
             try:
@@ -349,6 +349,30 @@ class Controller(threading.Thread):
 
     def button_event(self, keycode, clicks, holds):
         l = logging.getLogger('controller.event')
+        if keycode == config.BUTTON_UPDATEDB:
+                l.debug('action, BUTTON_UPDATEDB')
+                l.debug('>>> Updating MUSIC DataBase')                    
+                self.warn()
+                self.nullifySoundContext()
+                self.playSound(config.SOUND_UPDATE_MUSIC_DB)
+                time.sleep(1)
+                #print self.mpd.status()
+                self.mpd.update()
+                #print self.mpd.status()
+                updating = 1
+                while updating != 0:
+                    status = self.mpd.status()
+                    if 'updating_db' in status:
+                        updating = status['updating_db']
+                        l.debug('>>> updating_db = ' + str(updating))
+                        time.sleep(0.1)
+                    else:
+                        updating = 0                        
+                        l.debug('>>> updating_db = <> ')
+                l.debug('>>> Updating MUSIC DataBase COMPLETED')                    
+                self.warn()
+                self.playSound(config.SOUND_UPDATE_MUSIC_DB_COMPLETED)
+                self.wakeup()
         if keycode == config.BUTTON_ACTION:
             if clicks == 1:
                 l.debug('action, 1 click')
@@ -372,30 +396,6 @@ class Controller(threading.Thread):
                 if self.sleeping == 0:
                     l.debug('Shutting down...')
                     self.shut_down()
-            elif self.isVeryLongClick(clicks, holds):
-                l.debug('action, VERY LONG CLICK')
-                l.debug('>>> Updating MUSIC DataBase')                    
-                self.warn()
-                self.nullifySoundContext()
-                self.playSound(config.SOUND_UPDATE_MUSIC_DB)
-                time.sleep(1)
-                #print self.mpd.status()
-                self.mpd.update()
-                #print self.mpd.status()
-                updating = 1
-                while updating != 0:
-                    status = self.mpd.status()
-                    if 'updating_db' in status:
-                        updating = status['updating_db']
-                        l.debug('>>> updating_db = ' + str(updating))
-                        time.sleep(0.1)
-                    else:
-                        updating = 0                        
-                        l.debug('>>> updating_db = <> ')
-                l.debug('>>> Updating MUSIC DataBase COMPLETED')                    
-                self.warn()
-                self.playSound(config.SOUND_UPDATE_MUSIC_DB_COMPLETED)
-                self.wakeup()
             elif self.isExtraLongClick(clicks, holds):
                 l.debug('action, EXTRA LONG CLICK')
                 l.debug('>>> Resetting Network setup')                    
@@ -406,23 +406,6 @@ class Controller(threading.Thread):
             if clicks == 1:
                 l.debug('volume up, 1 click')
                 self.volume(+1)
-            #elif holds == config.BUTTON_HOLDS_EXTRA_LONG_CLICK:
-            #    l.debug('volume up, extra long click')
-            elif self.isVeryLongClick(clicks, holds):
-                l.debug('volume up, VERY LONG CLICK')
-                l.debug('>>> Warning')                    
-                self.warn()
-            elif self.isExtraLongClick(clicks, holds):
-                l.debug('volume up, EXTRA LONG CLICK')
-                # NOTE: The code in "warn" of the isVeryLongClick will set sleeping to 1
-                if self.sleeping == 0:
-                    # No action (for the moment)
-                    l.debug('>>> No action (for the moment)')                    
-                    #l.debug('Summoning extra feature !')
-                    #self.extraFeature()
-                else:
-                    l.debug('>>> Update')                    
-                    self.update()
             elif clicks > 1:
                 l.debug('volume up, several clicks')
                 l.debug('volume up, ' + str(clicks) + ' clicks, ' + str(holds) + ' holds')

@@ -8,7 +8,8 @@ DEBUG = True
 DEBUG_LAUNCH_FROM_LIGHTTPD = False
 
 LIMITED_PLAYLIST_CONTROL_BASED_ON_FOLDERS = True
-MUSIC_FOLDERS = ['1', '2', '3', '4', '5', '6']
+MUSIC_FOLDERS = ['1', '2', '3']
+#MUSIC_FOLDERS = ['1', '2', '3', '4', '5', '6']
 
 logging.basicConfig(level=logging.DEBUG if DEBUG else logging.WARNING)
 
@@ -53,7 +54,7 @@ elif HOST_NAME in ('cloudcaster'):
     BUTTON_VOL_UP = 17      # w
     BUTTON_ACTION = 31      # s
     BUTTON_VOL_DOWN = 45    # x
-
+    BUTTON_UPDATEDB = 22
     BUTTON_QUIT = 16 # q
     BUTTON_DEBUG = 4 # 3
 elif HOST_NAME in ('ubuntu'):
@@ -96,8 +97,10 @@ LED_NAME = 'tp-link:blue:system'
 
 GOLDEN_CONFIGURATION_NETWORK_FILES = "../golden_configuration/network/*"
 
-SOUND_START = 'resources/dreamcast.wav'
-#SOUND_START = 'resources/sonar.wav'
+if DEBUG == 'False':
+    SOUND_START = 'resources/dreamcast.wav'
+else:
+    SOUND_START = 'resources/sonar.wav'
 SOUND_SLEEP = 'resources/sleep.wav'
 SOUND_WAKEUP = 'resources/wakeup.wav'
 SOUND_EXTRAFEATURE = 'resources/encendido_completado.wav'
