@@ -51,8 +51,14 @@ elif HOST_NAME in ('cloudcaster'):
     print 'PLATFORM=pc'
     VOLUME_INIT = 50
     BUTTONS_EVDEV_FILE = '/dev/input/event0'
-    BUTTON_VOL_UP = 17      # w
+    BUTTON_PREV = 30      # a
+    BUTTON_NEXT = 32      # d
+    BUTTON_RECEIVE = 16   # q
+    BUTTON_VOL_UP = 17    # w
+    BUTTON_SEND_ANNA = 18      # e 
+    BUTTON_SEND_ALBERTO = 19      # r 
     BUTTON_ACTION = 31      # s
+    BUTTON_STOP = 44    # z
     BUTTON_VOL_DOWN = 45    # x
     BUTTON_UPDATEDB = 22
     BUTTON_QUIT = 16 # q
@@ -121,4 +127,8 @@ SOUND_UPDATE_MUSIC_DB = 'resources/update_music_db.wav'
 SOUND_UPDATE_MUSIC_DB_COMPLETED = 'resources/update_music_db_completed.wav'
 
 SOUND_WARNING_ALARM = 'resources/alarm.wav'
+
+SOUND_SENDING_SONG_TO = 'resources/sending_song_to.mp3'
+SOUND_ANNA = 'resources/anna.mp3'
+SOUND_ALBERTO = 'resources/alberto.mp3'
 

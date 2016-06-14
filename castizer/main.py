@@ -290,6 +290,39 @@ class Controller(threading.Thread):
         #print(status)
         #print 'SAVED CONTEXT *************************'                        
         
+    def getCurrentSongURL(self):
+        l = logging.getLogger('controller.event')
+        l.debug('getSoundContext() BEGIN')        
+        status = self.mpd.status()
+        #print status
+        if 'song' in status:
+            self.current_song_info = self.mpd.currentsong()
+            if 'file' in self.current_song_info:
+                self.current_song_URL = self.current_song_info['file']
+                print ('getCurrentSongURL: Song URL: ', self.current_song_URL)
+            else:
+                # An error occurred. TODO: track it !
+                print ('ERROR: getSoundContext', )
+        else:
+            print 'No song'
+            self.song_to_send = "ERROR"
+        l.debug('getSoundContext() END')                
+
+    def sendSong(self, person):
+        l = logging.getLogger('controller.event')
+        self.getCurrentSongURL()
+        print ('Song URL: ', self.current_song_URL)
+        self.saveSoundContext()
+        self.playSound(config.SOUND_SENDING_SONG_TO)
+        if (person == config.BUTTON_SEND_ANNA):
+            self.playSound(config.SOUND_ANNA)
+        elif (person == config.BUTTON_SEND_ALBERTO):
+            self.playSound(config.SOUND_ALBERTO)
+        else:
+            l.debug('ERROR: main.sendSong')                    
+            self.playSound(config.SOUND_WARNING_ALARM)
+        self.restoreSoundContext()
+
     def nullifySoundContext(self):
         l = logging.getLogger('controller.event')
         l.debug('nullifySoundContext...')                    
@@ -428,6 +461,33 @@ class Controller(threading.Thread):
                 l.debug('volume down, other click')
                 l.debug('volume down, ' + str(clicks) + ' clicks, ' + str(holds) + ' holds')
                 #self.volume(-3)
+        if keycode == config.BUTTON_NEXT:
+            if clicks == 1:
+                l.debug('BUTTON_NEXT, 1 click')
+                status = self.mpd.status()
+                if status['state'] == 'play':
+                    l.debug('>>> Next song !')
+                    self.mpd.next()
+        if keycode == config.BUTTON_PREV:
+            if clicks == 1:
+                l.debug('BUTTON_PREV, 1 click')
+                status = self.mpd.status()
+                if status['state'] == 'play':
+                    l.debug('>>> Prev song !')
+                    self.mpd.previous()
+        if keycode == config.BUTTON_SEND_ANNA or keycode == config.BUTTON_SEND_ALBERTO:
+            if clicks == 1:
+                l.debug('BUTTON_SEND, 1 click')
+                status = self.mpd.status()
+                if status['state'] == 'play':
+                    l.debug('>>> Sending current song !')
+                    self.sendSong(keycode)
+                else:
+                    l.debug(' Nothing is playing !')                    
+        if keycode == config.BUTTON_STOP:
+            if clicks == 1:
+                l.debug('BUTTON_STOP, 1 click')
+                self.sleep()
         elif keycode == config.BUTTON_DEBUG:
             self.debug(clicks)
         elif keycode == config.BUTTON_QUIT:
