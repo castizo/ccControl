@@ -321,6 +321,30 @@ class Controller(threading.Thread):
         else:
             l.debug('ERROR: main.sendSong')                    
             self.playSound(config.SOUND_WARNING_ALARM)
+
+        fullpath = self.current_song_URL
+        path, file = os.path.split(fullpath)
+        l.debug('path: ' + path)
+        l.debug('file: ' + file)
+        
+        command = "smbclient //localhost/cc_samba -c 'md \"" + path + "\";  put \"" + config.MUSIC_PATH + "/" + self.current_song_URL + "\" \"" + self.current_song_URL + "\"' -U usersamba pass"
+        print 'COMMAND: ', command
+        
+        try: 
+            command_status = os.system(command)
+        except: 
+            l.debug('sendSong(): ERROR during file copy')
+            return -1
+        if command_status == 0:
+            l.debug('sendSong() file sent succesfully !')
+            self.playSound(config.SOUND_SEND_OK)
+            #self.playSound(config.SOUND_RESET_NETWORK_COMPLETED)
+            #l.debug('resetNetwork(): END')
+        else:
+            l.debug('sendSong(): ERROR during file copy')
+            self.playSound(config.SOUND_WARNING_ALARM)
+            return -1
+
         self.restoreSoundContext()
 
     def nullifySoundContext(self):

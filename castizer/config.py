@@ -16,6 +16,8 @@ logging.basicConfig(level=logging.DEBUG if DEBUG else logging.WARNING)
 THIS_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 HOME = os.path.realpath(os.path.join(THIS_DIR, '..'))
 
+MUSIC_PATH = "/home/d/cloudcaster/cc_samba/music"
+
 DATABASES_PATH = os.path.join(HOME, 'databases')
 AUDIOFILES_PATH = os.path.join(HOME, 'audiofiles')
 PLUGINS_PATH = os.path.join(HOME, 'src/plugins')
@@ -126,9 +128,10 @@ SOUND_UPDATE_COMPLETED = 'resources/update_completed.wav'
 SOUND_UPDATE_MUSIC_DB = 'resources/update_music_db.wav'
 SOUND_UPDATE_MUSIC_DB_COMPLETED = 'resources/update_music_db_completed.wav'
 
-SOUND_WARNING_ALARM = 'resources/alarm.wav'
+SOUND_WARNING_ALARM = 'resources/sonar.wav'
 
 SOUND_SENDING_SONG_TO = 'resources/sending_song_to.mp3'
 SOUND_ANNA = 'resources/anna.mp3'
 SOUND_ALBERTO = 'resources/alberto.mp3'
+SOUND_SEND_OK = 'resources/sonar.wav'
 
