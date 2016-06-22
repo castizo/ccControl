@@ -433,6 +433,16 @@ class Controller(threading.Thread):
                 
         l = logging.getLogger('controller.event')
 
+        json_infile = config.SAMBA_PATH + "/" + config.C_INCOMING_FOLDER + "/" + config.JSON_OUTFILE
+        #check if there is incoming music
+        if os.path.isfile(json_infile):
+            print 'Incoming Song Available !'
+            l.debug('JSON file exists !')
+        else:
+            print 'No Songs Available !'
+            l.debug('JSON file does not exist !')
+            return
+    
         #save sound Context
         try:
             self.mpd.rm('pl_current')
@@ -441,7 +451,7 @@ class Controller(threading.Thread):
         self.mpd.save('pl_current')
 
         # Reading data back
-        with open(config.JSON_OUTFILE, 'r') as infile:
+        with open(json_infile, 'r') as infile:
             json_data = json.load(infile)
         
         print "************************"
@@ -508,12 +518,26 @@ class Controller(threading.Thread):
          
         l.debug('Resume playing from received song')        
         self.mpd.play(0)
-        
-        #if self.saved_song > -1:
-        #    self.mpd.seek(self.saved_song, self.saved_time)
-        #self.mpd.play()
 
-#        TODO: create special status to know that we are in special mode...
+        #TODO: go to awake status ???
+                
+        # remove json file
+        command = "rm " + json_infile
+        print 'COMMAND: ', command
+        try: 
+            command_status = os.system(command)
+        except: 
+            l.debug('readJson(): ERROR during file removal')
+            self.playSound(config.SOUND_WARNING_ALARM)
+            return -1
+        if command_status == 0:
+            l.debug('readJson(): JSON file succesfully removed')
+        else:
+            l.debug('readJson(): ERROR during file removal')
+            self.playSound(config.SOUND_WARNING_ALARM)
+            return -1
+
+#        TOFUTURE: create special status to know that we are in special mode...
          
 
     def nullifySoundContext(self):
