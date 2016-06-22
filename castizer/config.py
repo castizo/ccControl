@@ -72,7 +72,8 @@ elif HOST_NAME in ('cloudcaster'):
     BUTTON_ACTION = 31      # s
     BUTTON_STOP = 44    # z
     BUTTON_VOL_DOWN = 45    # x
-    BUTTON_DEBUG = 46 # c
+    BUTTON_GET_INCOMING_SONG = 46 # c
+    BUTTON_DEBUG = 47 # c
     BUTTON_UPDATEDB = 22
     BUTTON_QUIT = 16 # q
     C_SAMBA_SERVER_LOCAL = 'localhost'

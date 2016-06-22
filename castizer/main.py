@@ -92,6 +92,7 @@ class Controller(threading.Thread):
         l.debug('LED on')        
         self.led.on()
         self.sleeping = 0
+        self.incoming_songs = False
         
     def load_random_playlist(self):
         playlists = [p['playlist'] for p in self.mpd.listplaylists()]
@@ -429,7 +430,24 @@ class Controller(threading.Thread):
         with open('json_data.txt', 'r') as infile:
             json_data = json.load(infile)
         
-    def readJson(self):
+    # TODO: this function should be called in a periodic basis
+    def checkForIncomingSongs(self):
+
+        l = logging.getLogger('controller.event')
+
+        json_infile = config.SAMBA_PATH + "/" + config.C_INCOMING_FOLDER + "/" + config.JSON_OUTFILE
+        #check if there is incoming music
+        if os.path.isfile(json_infile):
+            print 'Incoming Song Available !'
+            self.incoming_songs = True
+            print 'TODO: blink LED !'
+            l.debug('JSON file exists !')
+        else:
+            print 'No Songs Available !'
+            l.debug('JSON file does not exist !')
+            return
+
+    def getIncomingSong(self):
                 
         l = logging.getLogger('controller.event')
 
@@ -536,6 +554,9 @@ class Controller(threading.Thread):
             l.debug('readJson(): ERROR during file removal')
             self.playSound(config.SOUND_WARNING_ALARM)
             return -1
+
+        self.incoming_songs = False
+        print 'TODO: stop LED blinking !'
 
 #        TOFUTURE: create special status to know that we are in special mode...
          
@@ -704,9 +725,19 @@ class Controller(threading.Thread):
         if keycode == config.BUTTON_DEBUG:
             if clicks == 1:
                 l.debug('BUTTON_DEBUG, 1 click')
-                self.readJson()
+                if not self.incoming_songs:
+                    self.checkForIncomingSongs()
             else:
                 l.debug('BUTTON_DEBUG, OTHER click')
+        if keycode == config.BUTTON_GET_INCOMING_SONG:
+            if clicks == 1:
+                l.debug('BUTTON_GET_INCOMING_SONG, 1 click')
+                if self.incoming_songs:
+                    self.getIncomingSong()
+                else:
+                    print 'No incoming songs !'                    
+            else:
+                l.debug('BUTTON_GET_INCOMING_SONG, OTHER click')
         if keycode == config.BUTTON_STOP:
             if clicks == 1:
                 l.debug('BUTTON_STOP, 1 click')
