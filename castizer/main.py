@@ -13,6 +13,10 @@ import time
 #TODO: Only is used for os->reboot to install updates... look for alternative way to do it
 import os
 from flup.server.fcgi import WSGIServer
+from mhlib import Folder
+from setuptools.extension import Library
+#from run import PLAYLISTS_DIR
+from _smbc import Context
 #import subprocess
 
 if config.PLATFORM == 'castizer':
@@ -425,6 +429,93 @@ class Controller(threading.Thread):
         with open('json_data.txt', 'r') as infile:
             json_data = json.load(infile)
         
+    def readJson(self):
+                
+        l = logging.getLogger('controller.event')
+
+        #save sound Context
+        try:
+            self.mpd.rm('pl_current')
+        except mpd.CommandError: 
+            print 'There was no pl_current playlist'        
+        self.mpd.save('pl_current')
+
+        # Reading data back
+        with open(config.JSON_OUTFILE, 'r') as infile:
+            json_data = json.load(infile)
+        
+        print "************************"
+
+        print "Number of songs: " + str(json_data['incoming'])
+        for song in json_data['songs']:   
+            print "Sender: " + str(song['sender']) + " URL: " + str(song['url'])
+            config.received_song_url =  str(song['url'])
+
+        print "************************"
+        
+        # copy received song from incoming to received folder
+        command = "mv \"" + config.SAMBA_PATH + "/" + config.C_INCOMING_FOLDER + "/" + config.received_song_url + "\" " + config.MUSIC_PATH + "/" + config.C_RECEIVED_FOLDER + "/"
+        print 'COMMAND: ', command
+        try: 
+            command_status = os.system(command)
+        except: 
+            l.debug('receiveSong(): ERROR during file move')
+            l.debug('receiveSong(): ERROR1')
+            self.playSound(config.SOUND_WARNING_ALARM)
+            return -1
+        if command_status == 0:
+            l.debug('receiveSong() file moved succesfully !')
+            self.playSound(config.SOUND_SEND_OK)
+            #self.playSound(config.SOUND_RESET_NETWORK_COMPLETED)
+            #l.debug('resetNetwork(): END')
+        else:
+            l.debug('receiveSong(): File already existed. For the momment we dont care.')
+            self.playSound(config.SOUND_SEND_OK)
+ 
+        #update mpd Library
+        l.debug('>>> Updating MUSIC DataBase')                    
+        time.sleep(1)
+        self.mpd.update()
+        updating = 1
+        while updating != 0:
+            status = self.mpd.status()
+            if 'updating_db' in status:
+                updating = status['updating_db']
+                l.debug('>>> updating_db = ' + str(updating))
+                time.sleep(0.1)
+            else:
+                updating = 0                        
+                l.debug('>>> updating_db = <> ')
+        l.debug('>>> Updating MUSIC DataBase COMPLETED')                    
+ 
+#         #play song
+#         #self.playSound(config.C_RECEIVED_FOLDER + "/" + config.received_song_url)
+
+        song_uri = config.C_RECEIVED_FOLDER + "/" + config.received_song_url
+          
+        #restore sound context
+        print('restoring context...')
+        self.mpd.clear()
+        try:
+            self.mpd.load('pl_current')
+        except mpd.CommandError: 
+            print 'There was no pl_current playlist'
+            self.change_playlist()
+            return
+ 
+        self.mpd.addid(song_uri, 0)
+        l.debug('Adding received song in the first position of the playlist')        
+         
+        l.debug('Resume playing from received song')        
+        self.mpd.play(0)
+        
+        #if self.saved_song > -1:
+        #    self.mpd.seek(self.saved_song, self.saved_time)
+        #self.mpd.play()
+
+#        TODO: create special status to know that we are in special mode...
+         
+
     def nullifySoundContext(self):
         l = logging.getLogger('controller.event')
         l.debug('nullifySoundContext...')                    
@@ -589,7 +680,7 @@ class Controller(threading.Thread):
         if keycode == config.BUTTON_DEBUG:
             if clicks == 1:
                 l.debug('BUTTON_DEBUG, 1 click')
-                self.createJson()
+                self.readJson()
             else:
                 l.debug('BUTTON_DEBUG, OTHER click')
         if keycode == config.BUTTON_STOP:

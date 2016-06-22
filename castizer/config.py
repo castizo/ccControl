@@ -17,6 +17,7 @@ THIS_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe(
 HOME = os.path.realpath(os.path.join(THIS_DIR, '..'))
 
 MUSIC_PATH = "/home/d/cloudcaster/cc_samba/music"
+SAMBA_PATH = "/home/d/cloudcaster/cc_samba"
 
 DATABASES_PATH = os.path.join(HOME, 'databases')
 AUDIOFILES_PATH = os.path.join(HOME, 'audiofiles')
@@ -44,6 +45,8 @@ current_song_file = "filenameEMPTY"
 current_song_path = "pathnameEMPTY"
 sendTo = "ERROR"
 
+received_song_url =  "NoSongReceived"
+                                
 JSON_OUTFILE = "json_incoming_songs.txt"
             
 if HOST_NAME in ('OpenWrt', 'dubber', 'castizer'):
@@ -75,7 +78,7 @@ elif HOST_NAME in ('cloudcaster'):
     C_SAMBA_SERVER_LOCAL = 'localhost'
     C_SAMBA_SERVER_REMOTE = 'beaglebone'
     C_INCOMING_FOLDER = 'incoming'
-    
+    C_RECEIVED_FOLDER = 'received'    
 elif HOST_NAME in ('ubuntu'):
     PLATFORM = 'pc'
     print 'PLATFORM=pc'
