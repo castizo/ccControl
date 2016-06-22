@@ -8,6 +8,7 @@ import Queue
 import logging
 import random
 import bottle
+import json
 import time
 #TODO: Only is used for os->reboot to install updates... look for alternative way to do it
 import os
@@ -298,42 +299,56 @@ class Controller(threading.Thread):
         if 'song' in status:
             self.current_song_info = self.mpd.currentsong()
             if 'file' in self.current_song_info:
-                self.current_song_URL = self.current_song_info['file']
-                print ('getCurrentSongURL: Song URL: ', self.current_song_URL)
+                config.current_song_URL = self.current_song_info['file']
+                config.current_song_path, config.current_song_file = os.path.split(config.current_song_URL)
+                #path = config.C_INCOMING_FOLDER + "/" + path
+                l.debug('path: ' + config.current_song_path)
+                l.debug('file: ' + config.current_song_file)
+                print ('getCurrentSongURL: Song URL: ', config.current_song_URL)
             else:
                 # An error occurred. TODO: track it !
                 print ('ERROR: getSoundContext', )
         else:
             print 'No song'
-            self.song_to_send = "ERROR"
+            config.current_song_URL = "ERROR"
+            config.current_song_path = "ERROR"
+            config.current_song_file = "ERROR"
         l.debug('getSoundContext() END')                
 
+    # Sends the current playing song to either local or remote samba folder
     def sendSong(self, person):
         l = logging.getLogger('controller.event')
         self.getCurrentSongURL()
-        print ('Song URL: ', self.current_song_URL)
+        print ('Song URL: ', config.current_song_URL)
         self.saveSoundContext()
         self.playSound(config.SOUND_SENDING_SONG_TO)
         if (person == config.BUTTON_SEND_ANNA):
             self.playSound(config.SOUND_ANNA)
+            config.sendTo = config.C_SAMBA_SERVER_LOCAL
+            self.usersamba = "usersamba"
         elif (person == config.BUTTON_SEND_ALBERTO):
             self.playSound(config.SOUND_ALBERTO)
+            config.sendTo = config.C_SAMBA_SERVER_REMOTE
+            self.usersamba = "root"
         else:
             l.debug('ERROR: main.sendSong')                    
             self.playSound(config.SOUND_WARNING_ALARM)
 
-        fullpath = self.current_song_URL
-        path, file = os.path.split(fullpath)
-        l.debug('path: ' + path)
-        l.debug('file: ' + file)
-        
-        command = "smbclient //localhost/cc_samba -c 'md \"" + path + "\";  put \"" + config.MUSIC_PATH + "/" + self.current_song_URL + "\" \"" + self.current_song_URL + "\"' -U usersamba pass"
+        self.createJson()
+
+        #command = "smbclient //" + self.sendTo + "/cc_samba -c 'md \"" + path + "\";  put \"" + config.MUSIC_PATH + "/" + config.current_song_URL + "\" \"" + config.current_song_URL + "\"' -U " + self.usersamba + " pass"
+        command = "smbclient //" + config.sendTo + "/cc_samba -c 'put \"" + config.MUSIC_PATH + "/" + config.current_song_URL + "\" \"" + config.C_INCOMING_FOLDER + "/" + config.current_song_file + "\"' -U " + self.usersamba + " pass"
+        command_send_json_file = "smbclient //" + config.sendTo + "/cc_samba -c 'put \"" + config.JSON_OUTFILE + "\" \"" + config.C_INCOMING_FOLDER + "/" + config.JSON_OUTFILE + "\"' -U " + self.usersamba + " pass"
         print 'COMMAND: ', command
+        print 'COMMAND command_send_json_file: ', command_send_json_file
         
+        #ceck file exists
         try: 
             command_status = os.system(command)
+            command_status = os.system(command_send_json_file)
         except: 
             l.debug('sendSong(): ERROR during file copy')
+            self.playSound(config.SOUND_WARNING_ALARM)
             return -1
         if command_status == 0:
             l.debug('sendSong() file sent succesfully !')
@@ -341,14 +356,38 @@ class Controller(threading.Thread):
             #self.playSound(config.SOUND_RESET_NETWORK_COMPLETED)
             #l.debug('resetNetwork(): END')
         else:
-            l.debug('sendSong(): ERROR during file copy')
-            self.playSound(config.SOUND_WARNING_ALARM)
-            return -1
+            # This should be an error... but also happens when file exists already !
+            #l.debug('sendSong(): ERROR during file copy')
+            #return -1
+            l.debug('sendSong() WARNING: THIS COMMAND MIGHT HAVE GENERATED AN ERROR !')
+            l.debug('sendSong() WARNING: Either that, or the destination file existed.')
+            self.playSound(config.SOUND_SEND_OK)
 
         self.restoreSoundContext()
 
     def createJson(self):
-        import json
+                
+        l = logging.getLogger('controller.event')
+
+        json_data = { "incoming":0, "songs": [] }      
+
+        json_data['incoming'] = 1;
+        
+        #json_data['songs'].append({"sender":"pc", "url":config.current_song_file})
+        json_data['songs'].append({"sender":config.HOST_NAME, "url":config.current_song_file})
+        
+        with open(config.JSON_OUTFILE, 'w') as outfile:
+            json.dump(json_data, outfile)
+    
+        print "************************"
+        for song in json_data['songs']:   
+            print "Sender: " + str(song['sender']) + " URL: " + str(song['url'])
+        print "************************"
+
+        #print data.songs[0].sender
+        #print data.songs[0].url
+
+    def createJsonTest(self):
                 
         json_data = { "incoming":0, "songs": [] }      
 

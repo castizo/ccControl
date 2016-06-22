@@ -39,6 +39,13 @@ UPDATE_PACKAGE_PATH = os.path.join(UPDATES_PATH, 'update_package')
 
 HOST_NAME = platform.node()
 
+current_song_URL = "ERROR"
+current_song_file = "filenameEMPTY"
+current_song_path = "pathnameEMPTY"
+sendTo = "ERROR"
+
+JSON_OUTFILE = "json_incoming_songs.txt"
+            
 if HOST_NAME in ('OpenWrt', 'dubber', 'castizer'):
     print 'PLATFORM=CASTIZER'
     PLATFORM = 'castizer'
@@ -65,6 +72,10 @@ elif HOST_NAME in ('cloudcaster'):
     BUTTON_DEBUG = 46 # c
     BUTTON_UPDATEDB = 22
     BUTTON_QUIT = 16 # q
+    C_SAMBA_SERVER_LOCAL = 'localhost'
+    C_SAMBA_SERVER_REMOTE = 'beaglebone'
+    C_INCOMING_FOLDER = 'incoming'
+    
 elif HOST_NAME in ('ubuntu'):
     PLATFORM = 'pc'
     print 'PLATFORM=pc'
