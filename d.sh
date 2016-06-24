@@ -1,19 +1,12 @@
 #!/bin/bash
 #deploy
 
-remote_machine="192.168.0.55"
+remote_machine="ccanna.local"
+#remote_machine="192.168.0.55"
 #remote_machine="castizer.local"
 
 if [ "$1" == up ]; then
-  echo "Uploading changes to the server..."
-  # Run this script to upload the remote folder
-  # Inside castizer, the code is under: /
-  rsync -rtvuc --delete ./src/ root@$remote_machine:/root/castizer-control/src/
-  rsync -rtvuc --delete ./golden_configuration/ root@$remote_machine:/root/castizer-control/golden_configuration/
-  rsync -rtvuc --delete ./run.py root@$remote_machine:/root/castizer-control/
-  rsync -rtvuc --delete ./update/ root@$remote_machine:/root/castizer-control/update/
-  rsync -rtvuc --delete ./mpd/playlists/ root@$remote_machine:/root/castizer-control/mpd/playlists/
-  #rsync -rtvuc ./audiofiles/ root@$remote_machine:/root/castizer-control/audiofiles/
+  scp -r ../ccControl pi@$remote_machine:/home/pi/cloudcaster/
   echo "Done"
 elif [ "$1" == down ]; then
   echo "Downloading updates from server..."

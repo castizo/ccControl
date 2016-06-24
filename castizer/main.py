@@ -15,8 +15,9 @@ import os
 from flup.server.fcgi import WSGIServer
 from mhlib import Folder
 from setuptools.extension import Library
+from time import sleep
 #from run import PLAYLISTS_DIR
-from _smbc import Context
+#from _smbc import Context
 #import subprocess
 
 if config.PLATFORM == 'castizer':
@@ -329,12 +330,12 @@ class Controller(threading.Thread):
         self.playSound(config.SOUND_SENDING_SONG_TO)
         if (person == config.BUTTON_SEND_ANNA):
             self.playSound(config.SOUND_ANNA)
-            config.sendTo = config.C_SAMBA_SERVER_LOCAL
-            self.usersamba = "usersamba"
+            config.sendTo = config.C_SAMBA_SERVER_REMOTE
+            self.usersamba = config.C_USERSAMBA_REMOTE
         elif (person == config.BUTTON_SEND_ALBERTO):
             self.playSound(config.SOUND_ALBERTO)
-            config.sendTo = config.C_SAMBA_SERVER_REMOTE
-            self.usersamba = "root"
+            config.sendTo = config.C_SAMBA_SERVER_LOCAL
+            self.usersamba = config.C_USERSAMBA_LOCAL
         else:
             l.debug('ERROR: main.sendSong')                    
             self.playSound(config.SOUND_WARNING_ALARM)
@@ -342,15 +343,18 @@ class Controller(threading.Thread):
         self.createJson()
 
         #command = "smbclient //" + self.sendTo + "/cc_samba -c 'md \"" + path + "\";  put \"" + config.MUSIC_PATH + "/" + config.current_song_URL + "\" \"" + config.current_song_URL + "\"' -U " + self.usersamba + " pass"
-        command = "smbclient //" + config.sendTo + "/cc_samba -c 'put \"" + config.MUSIC_PATH + "/" + config.current_song_URL + "\" \"" + config.C_INCOMING_FOLDER + "/" + config.current_song_file + "\"' -U " + self.usersamba + " pass"
-        command_send_json_file = "smbclient //" + config.sendTo + "/cc_samba -c 'put \"" + config.JSON_OUTFILE + "\" \"" + config.C_INCOMING_FOLDER + "/" + config.JSON_OUTFILE + "\"' -U " + self.usersamba + " pass"
+        command = "smbclient //" + config.sendTo + "/cc_samba -c 'put \"" + config.MUSIC_PATH + "/" + config.current_song_URL + "\" \"" + config.C_INCOMING_FOLDER + "/" + config.current_song_file + "\"; put \"" + config.JSON_OUTFILE + "\" \"" + config.C_INCOMING_FOLDER + "/" + config.JSON_OUTFILE + "\"' -U " + self.usersamba + " pass"
+        #command_send_json_file = "smbclient //" + config.sendTo + "/cc_samba -c '' -U " + self.usersamba + " pass"
         print 'COMMAND: ', command
-        print 'COMMAND command_send_json_file: ', command_send_json_file
+        #print 'COMMAND command_send_json_file: ', command_send_json_file
         
         #ceck file exists
         try: 
             command_status = os.system(command)
-            command_status = os.system(command_send_json_file)
+            l.debug('command1 complete')
+            #sleep(5)
+            #command_status = os.system(command_send_json_file)
+            #l.debug('command2 complete')
         except: 
             l.debug('sendSong(): ERROR during file copy')
             self.playSound(config.SOUND_WARNING_ALARM)
@@ -790,9 +794,15 @@ def main():
     global global_controller;
     global_controller = Controller()
     global_controller.start()
+
+    print 'TODO: update the library automatically everytime certain time'
+    print '      in case the user added / removed songs'
+    print 'TRY the autoupdate function in the mpd.conf file'
+                        
     if config.PLATFORM == 'castizer':
         #flup.server.fcgi.WSGIServer(bottle.default_app()).run()
         WSGIServer(bottle.default_app(), bindAddress="/tmp/fastcgi.python.socket").run()
+        l = logging.getLogger('controller.event')
     else:
         l = logging.getLogger('controller.event')
         l.debug('starting bottle...')

@@ -16,9 +16,6 @@ logging.basicConfig(level=logging.DEBUG if DEBUG else logging.WARNING)
 THIS_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 HOME = os.path.realpath(os.path.join(THIS_DIR, '..'))
 
-MUSIC_PATH = "/home/d/cloudcaster/cc_samba/music"
-SAMBA_PATH = "/home/d/cloudcaster/cc_samba"
-
 DATABASES_PATH = os.path.join(HOME, 'databases')
 AUDIOFILES_PATH = os.path.join(HOME, 'audiofiles')
 PLUGINS_PATH = os.path.join(HOME, 'src/plugins')
@@ -34,6 +31,7 @@ UPDATE_SERVERNAME = "www.aquaolympic.com/www/ctz/updates"
 #UPDATE_FLAG = "/root/config/update"
 #UPDATE_FOLDER = "/root/update"
 # Should it go into the ./config/update folder?
+
 UPDATES_PATH = os.path.join(HOME, 'update')
 UPDATE_FLAG = os.path.join(UPDATES_PATH, 'update')
 UPDATE_PACKAGE_PATH = os.path.join(UPDATES_PATH, 'update_package')
@@ -48,6 +46,9 @@ sendTo = "ERROR"
 received_song_url =  "NoSongReceived"
                                 
 JSON_OUTFILE = "json_incoming_songs.txt"
+C_SAMBA_SERVER_LOCAL = 'localhost'
+C_INCOMING_FOLDER = 'incoming'
+C_RECEIVED_FOLDER = 'received'    
             
 if HOST_NAME in ('OpenWrt', 'dubber', 'castizer'):
     print 'PLATFORM=CASTIZER'
@@ -76,10 +77,34 @@ elif HOST_NAME in ('cloudcaster'):
     BUTTON_DEBUG = 47 # c
     BUTTON_UPDATEDB = 22
     BUTTON_QUIT = 16 # q
-    C_SAMBA_SERVER_LOCAL = 'localhost'
-    C_SAMBA_SERVER_REMOTE = 'beaglebone'
-    C_INCOMING_FOLDER = 'incoming'
-    C_RECEIVED_FOLDER = 'received'    
+    MUSIC_PATH = "/home/d/cloudcaster/cc_samba/music"
+    SAMBA_PATH = "/home/d/cloudcaster/cc_samba"
+    C_SAMBA_SERVER_REMOTE = 'ccanna'
+    C_USERSAMBA_LOCAL = 'd'
+    C_USERSAMBA_REMOTE = 'pi'
+elif HOST_NAME in ('ccanna'):
+    PLATFORM = 'RASPI'
+    print 'PLATFORM=', PLATFORM
+    VOLUME_INIT = 50
+    BUTTONS_EVDEV_FILE = '/dev/input/event0'
+    BUTTON_PREV = 30      # a
+    BUTTON_NEXT = 32      # d
+    BUTTON_RECEIVE = 16   # q
+    BUTTON_VOL_UP = 17    # w
+    BUTTON_SEND_ANNA = 18      # e 
+    BUTTON_SEND_ALBERTO = 19      # r 
+    BUTTON_ACTION = 31      # s
+    BUTTON_STOP = 44    # z
+    BUTTON_VOL_DOWN = 45    # x
+    BUTTON_GET_INCOMING_SONG = 46 # c
+    BUTTON_DEBUG = 47 # c
+    BUTTON_UPDATEDB = 22
+    BUTTON_QUIT = 16 # q
+    SAMBA_PATH = "/home/pi/cloudcaster/cc_samba"
+    MUSIC_PATH = "/home/pi/cloudcaster/cc_samba/music"
+    C_SAMBA_SERVER_REMOTE = 'cloudcaster'
+    C_USERSAMBA_LOCAL = 'pi'
+    C_USERSAMBA_REMOTE = 'd'
 elif HOST_NAME in ('ubuntu'):
     PLATFORM = 'pc'
     print 'PLATFORM=pc'
