@@ -85,8 +85,9 @@ elif HOST_NAME in ('cloudcaster'):
 elif HOST_NAME in ('ccanna'):
     PLATFORM = 'RASPI'
     print 'PLATFORM=', PLATFORM
-    VOLUME_INIT = 50
-    BUTTONS_EVDEV_FILE = '/dev/input/event0'
+    VOLUME_INIT = 10
+    # when plugged in the USB sound card, it becomes event1. event0 otherwise
+    BUTTONS_EVDEV_FILE = '/dev/input/event1'
     BUTTON_PREV = 30      # a
     BUTTON_NEXT = 32      # d
     BUTTON_RECEIVE = 16   # q

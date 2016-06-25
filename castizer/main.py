@@ -27,7 +27,7 @@ else:
 
 
 LOG = logging.getLogger('Main Controller')
-
+    
 
 class Controller(threading.Thread):
 
@@ -40,6 +40,8 @@ class Controller(threading.Thread):
         self.buttons.register(self.buttons_callback)
         self.buttons.start()
         self.queue = Queue.Queue()
+        self.queue_do = Queue.Queue()
+
         self.folder_index = -1
         self.folders = config.MUSIC_FOLDERS
         self.mpd = mpd.MPDClient()
@@ -61,8 +63,18 @@ class Controller(threading.Thread):
             try:
                 keycode, clicks, holds = self.queue.get(block=True, timeout=1)
             except Queue.Empty:
+                try:
+                    message = self.queue_do.get(block=False)
+                    print "run method: received from queue_do: ", message
+                except Queue.Empty:
+                    continue
                 continue
             self.button_event(keycode, clicks, holds)
+
+    # called by each thread
+    def doSendSong(self, q, msg):
+        print "doSendSong(): ", msg
+        q.put("OK")
 
     def playStartSound(self):
         self.playSound(config.SOUND_START)
@@ -348,11 +360,16 @@ class Controller(threading.Thread):
         print 'COMMAND: ', command
         #print 'COMMAND command_send_json_file: ', command_send_json_file
         
+        t = threading.Thread(target=self.doSendSong, args = (self.queue_do,"First Call"))
+        #t.daemon = True
+        t.start()
+
         #ceck file exists
         try: 
-            command_status = os.system(command)
+            #command_status = os.system(command)
             l.debug('command1 complete')
             #sleep(5)
+            command_status = 0
             #command_status = os.system(command_send_json_file)
             #l.debug('command2 complete')
         except: 
@@ -760,7 +777,6 @@ class Controller(threading.Thread):
 global_controller = None
 #plug_ins = plugins.load_all()
 
-
 @bottle.route('/')
 def root():
     base_html = '<html><head><title>Castizer!</title></head><body>{}</body></html>'
@@ -794,7 +810,7 @@ def main():
     global global_controller;
     global_controller = Controller()
     global_controller.start()
-
+    
     print 'TODO: update the library automatically everytime certain time'
     print '      in case the user added / removed songs'
     print 'TRY the autoupdate function in the mpd.conf file'
