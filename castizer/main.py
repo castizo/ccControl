@@ -72,8 +72,33 @@ class Controller(threading.Thread):
             self.button_event(keycode, clicks, holds)
 
     # called by each thread
-    def doSendSong(self, q, msg):
-        print "doSendSong(): ", msg
+    def doSendSong(self, q, command):
+        l = logging.getLogger('thread.doSendSong')
+        #print "doSendSong(): ", command
+
+        #ceck file exists
+        try: 
+            l.debug('Launching command...')
+            command_status = os.system(command)
+            l.debug('Command completed')
+            command_status = 0
+        except: 
+            l.debug('ERROR during file copy')
+            self.playSound(config.SOUND_WARNING_ALARM)
+            return -1
+        if command_status == 0:
+            l.debug('file sent succesfully !')
+            #self.playSound(config.SOUND_SEND_OK)
+            #self.playSound(config.SOUND_RESET_NETWORK_COMPLETED)
+            #l.debug('resetNetwork(): END')
+        else:
+            # This should be an error... but also happens when file exists already !
+            #l.debug('sendSong(): ERROR during file copy')
+            #return -1
+            l.debug('doSendSong() WARNING: THIS COMMAND MIGHT HAVE GENERATED AN ERROR !')
+            l.debug('doSendSong() WARNING: Either that, or the destination file existed.')
+            self.playSound(config.SOUND_SEND_OK)
+        
         q.put("OK")
 
     def playStartSound(self):
@@ -360,34 +385,10 @@ class Controller(threading.Thread):
         print 'COMMAND: ', command
         #print 'COMMAND command_send_json_file: ', command_send_json_file
         
-        t = threading.Thread(target=self.doSendSong, args = (self.queue_do,"First Call"))
+        t = threading.Thread(target=self.doSendSong, args = (self.queue_do, command))
         #t.daemon = True
         t.start()
-
-        #ceck file exists
-        try: 
-            #command_status = os.system(command)
-            l.debug('command1 complete')
-            #sleep(5)
-            command_status = 0
-            #command_status = os.system(command_send_json_file)
-            #l.debug('command2 complete')
-        except: 
-            l.debug('sendSong(): ERROR during file copy')
-            self.playSound(config.SOUND_WARNING_ALARM)
-            return -1
-        if command_status == 0:
-            l.debug('sendSong() file sent succesfully !')
-            self.playSound(config.SOUND_SEND_OK)
-            #self.playSound(config.SOUND_RESET_NETWORK_COMPLETED)
-            #l.debug('resetNetwork(): END')
-        else:
-            # This should be an error... but also happens when file exists already !
-            #l.debug('sendSong(): ERROR during file copy')
-            #return -1
-            l.debug('sendSong() WARNING: THIS COMMAND MIGHT HAVE GENERATED AN ERROR !')
-            l.debug('sendSong() WARNING: Either that, or the destination file existed.')
-            self.playSound(config.SOUND_SEND_OK)
+        l.debug('Created new thread to send the song in background')
 
         self.restoreSoundContext()
 
