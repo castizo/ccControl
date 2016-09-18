@@ -8,7 +8,7 @@ DEBUG = True
 DEBUG_LAUNCH_FROM_LIGHTTPD = False
 
 LIMITED_PLAYLIST_CONTROL_BASED_ON_FOLDERS = True
-MUSIC_FOLDERS = ['1', '2', '3']
+MUSIC_FOLDERS = ['1', '2', '3', '4']
 #MUSIC_FOLDERS = ['1', '2', '3', '4', '5', '6']
 
 logging.basicConfig(level=logging.DEBUG if DEBUG else logging.WARNING)
@@ -74,11 +74,12 @@ elif HOST_NAME in ('cloudcaster'):
     BUTTON_STOP = 44    # z
     BUTTON_VOL_DOWN = 45    # x
     BUTTON_GET_INCOMING_SONG = 46 # c
-    BUTTON_DEBUG = 47 # c
-    BUTTON_UPDATEDB = 22
+    BUTTON_DEBUG = 47 # v
+    BUTTON_UPDATEDB = 22 # u
     BUTTON_QUIT = 16 # q
-    MUSIC_PATH = "/home/d/cloudcaster/cc_samba/music"
-    SAMBA_PATH = "/home/d/cloudcaster/cc_samba"
+    HOME_PATH = "/home/d/cloudcaster"
+    FILES_PATH = HOME_PATH + "/cc_files"
+    MUSIC_PATH = FILES_PATH + "/music"
     C_SAMBA_SERVER_REMOTE = 'ccanna'
     C_USERSAMBA_LOCAL = 'd'
     C_USERSAMBA_REMOTE = 'pi'
@@ -101,15 +102,15 @@ elif HOST_NAME in ('ccanna'):
     BUTTON_DEBUG = 47 # c
     BUTTON_UPDATEDB = 22
     BUTTON_QUIT = 16 # q
-    SAMBA_PATH = "/home/pi/cloudcaster/cc_samba"
-    MUSIC_PATH = "/home/pi/cloudcaster/cc_samba/music"
+    SAMBA_PATH = "/home/pi/cloudcaster/cc_files"
+    MUSIC_PATH = "/home/pi/cloudcaster/cc_files/music"
     C_SAMBA_SERVER_REMOTE = 'cloudcaster'
     C_USERSAMBA_LOCAL = 'pi'
     C_USERSAMBA_REMOTE = 'd'
-elif HOST_NAME in ('ubuntu'):
-    PLATFORM = 'pc'
-    print 'PLATFORM=pc'
-    BUTTONS_EVDEV_FILE = '/dev/input/event1'
+#elif HOST_NAME in ('ubuntu'):
+#    PLATFORM = 'pc'
+#    print 'PLATFORM=pc'
+#    BUTTONS_EVDEV_FILE = '/dev/input/event1'
 elif HOST_NAME in ('devmachine'):
     PLATFORM = 'devmachine'
     print 'PLATFORM=devmachine'

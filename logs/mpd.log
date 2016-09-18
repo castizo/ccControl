@@ -971,3 +971,25 @@ Oct 10 08:53 : config: option 'mixer_control' on line 20 was not recognized
 Oct 10 08:53 : config: option 'mixer_index' on line 21 was not recognized
 Oct 10 08:53 : avahi: Service 'Music Player' successfully established.
 Oct 10 11:21 : avahi: Client Disconnected, will reconnect shortly
+Sep 16 16:44 : config: option 'mixer_device' on line 19 was not recognized
+Sep 16 16:44 : config: option 'mixer_control' on line 20 was not recognized
+Sep 16 16:44 : config: option 'mixer_index' on line 21 was not recognized
+Sep 16 16:44 : client: [0] opened from 127.0.0.1:48589
+Sep 16 16:44 : db: No such directory
+Sep 16 16:44 : client: [0] closed
+Sep 16 16:44 : avahi: Service 'Music Player' successfully established.
+Sep 16 16:44 : client: [1] opened from [::1]:59712
+Sep 16 16:44 : client: [1] closed
+Sep 16 16:44 : client: [2] opened from [::1]:59713
+Sep 16 16:44 : db: No such directory
+Sep 16 16:44 : client: [2] closed
+Sep 16 16:44 : client: [3] opened from 127.0.0.1:48592
+Sep 16 16:44 : db: No such directory
+Sep 16 16:44 : client: [3] closed
+Sep 16 16:46 : config: option 'mixer_device' on line 19 was not recognized
+Sep 16 16:46 : config: option 'mixer_control' on line 20 was not recognized
+Sep 16 16:46 : config: option 'mixer_index' on line 21 was not recognized
+Sep 16 16:46 : client: [0] opened from 127.0.0.1:48593
+Sep 16 16:46 : db: No such directory
+Sep 16 16:46 : client: [0] closed
+Sep 16 16:46 : avahi: Service 'Music Player' successfully established.

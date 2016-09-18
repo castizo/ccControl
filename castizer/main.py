@@ -73,7 +73,7 @@ class Controller(threading.Thread):
 
     # called by each thread
     def doSendSong(self, q, command):
-        l = logging.getLogger('thread.doSendSong')
+        l = logging.getLogger('THREAD.doSendSong')
         #print "doSendSong(): ", command
 
         #ceck file exists
@@ -386,7 +386,6 @@ class Controller(threading.Thread):
         #print 'COMMAND command_send_json_file: ', command_send_json_file
         
         t = threading.Thread(target=self.doSendSong, args = (self.queue_do, command))
-        #t.daemon = True
         t.start()
         l.debug('Created new thread to send the song in background')
 
@@ -453,6 +452,10 @@ class Controller(threading.Thread):
             json_data = json.load(infile)
         
     # TODO: this function should be called in a periodic basis
+    # Setup a timer
+    # A function checks if the file exists every 1 minute, for instance
+    #     if it exists, launches a new background process to get it
+    #     once finished, blink the LED to notify user !
     def checkForIncomingSongs(self):
 
         l = logging.getLogger('controller.event')
@@ -640,6 +643,25 @@ class Controller(threading.Thread):
             return True
         return False
 
+    def cloudPull(self):
+        l = logging.getLogger('controller.cloudPull')
+        #For testing: rclone sync --dry-run gdrive:
+        command =  "rclone sync gdrive:/castizer/music/" + "4" + " " +  config.MUSIC_PATH + "/" + "4"
+        #TODO: write output of command to file " >> " + "log/" + "cloud_pull.log
+        print command
+        l.debug('Launching command...')
+        try: 
+            command_status = os.system(command)
+            l.debug('Command completed')
+        except: 
+            l.debug('cloudPull(): ERROR')
+            self.playSound(config.SOUND_WARNING_ALARM)
+            return -1
+        if command_status == 0:
+            l.debug('cloudPull() succesfully completed !')
+            #self.playSound(config.SOUND_SEND_OK)
+        return command_status        
+    
     def button_event(self, keycode, clicks, holds):
         l = logging.getLogger('controller.event')
         if keycode == config.BUTTON_UPDATEDB:
@@ -647,8 +669,10 @@ class Controller(threading.Thread):
                 l.debug('>>> Updating MUSIC DataBase')                    
                 self.warn()
                 self.nullifySoundContext()
-                self.playSound(config.SOUND_UPDATE_MUSIC_DB)
+                #self.playSound(config.SOUND_UPDATE_MUSIC_DB)
                 time.sleep(1)
+                #update music folders from the cloud
+                self.cloudPull()
                 #print self.mpd.status()
                 self.mpd.update()
                 #print self.mpd.status()
