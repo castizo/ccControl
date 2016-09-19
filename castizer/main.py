@@ -358,32 +358,68 @@ class Controller(threading.Thread):
             config.current_song_file = "ERROR"
         l.debug('getSoundContext() END')                
 
-    # Sends the current playing song to either local or remote samba folder
+    # Sends the current playing song to the receiver
     def sendSong(self, person):
         l = logging.getLogger('controller.event')
         self.getCurrentSongURL()
         print ('Song URL: ', config.current_song_URL)
         self.saveSoundContext()
         self.playSound(config.SOUND_SENDING_SONG_TO)
-        if (person == config.BUTTON_SEND_ANNA):
-            self.playSound(config.SOUND_ANNA)
-            config.sendTo = config.C_SAMBA_SERVER_REMOTE
-            self.usersamba = config.C_USERSAMBA_REMOTE
-        elif (person == config.BUTTON_SEND_ALBERTO):
-            self.playSound(config.SOUND_ALBERTO)
-            config.sendTo = config.C_SAMBA_SERVER_LOCAL
-            self.usersamba = config.C_USERSAMBA_LOCAL
+        #if (person == config.BUTTON_SEND_ANNA):
+        #    self.playSound(config.SOUND_ANNA)
+        #    config.sendTo = config.C_FRIENDS_ANNA
+        #elif (person == config.BUTTON_SEND_ALBERTO):
+        #    self.playSound(config.SOUND_ALBERTO)
+        #    config.sendTo = config.C_FRIENDS_ALBERTO
+        #el
+        if (person == config.BUTTON_SEND_PABLO):
+            self.playSound(config.SOUND_PABLO)
+            config.sendTo = config.C_FRIENDS_PABLO
+        elif (person == config.BUTTON_SEND_COQUI):
+            self.playSound(config.SOUND_COQUI)
+            config.sendTo = config.C_FRIENDS_COQUI
         else:
             l.debug('ERROR: main.sendSong')                    
             self.playSound(config.SOUND_WARNING_ALARM)
 
         self.createJson()
 
-        #command = "smbclient //" + self.sendTo + "/cc_samba -c 'md \"" + path + "\";  put \"" + config.MUSIC_PATH + "/" + config.current_song_URL + "\" \"" + config.current_song_URL + "\"' -U " + self.usersamba + " pass"
-        command = "smbclient //" + config.sendTo + "/cc_samba -c 'put \"" + config.MUSIC_PATH + "/" + config.current_song_URL + "\" \"" + config.C_INCOMING_FOLDER + "/" + config.current_song_file + "\"; put \"" + config.JSON_OUTFILE + "\" \"" + config.C_INCOMING_FOLDER + "/" + config.JSON_OUTFILE + "\"' -U " + self.usersamba + " pass"
-        #command_send_json_file = "smbclient //" + config.sendTo + "/cc_samba -c '' -U " + self.usersamba + " pass"
+        destination_folder = config.C_SHARES_FOLDER + "/" + config.C_OWNER + "4" + config.sendTo
+
+        command = "cp " + config.JSON_OUTFILE + " " + destination_folder + "/" + config.JSON_OUTFILE
         print 'COMMAND: ', command
-        #print 'COMMAND command_send_json_file: ', command_send_json_file
+        try: 
+            command_status = os.system(command)
+        except: 
+            l.debug('sendSong(): ERROR during file move')
+            self.playSound(config.SOUND_WARNING_ALARM)
+            return -1
+        if command_status == 0:
+            l.debug('sendSong() file moved succesfully !')
+            self.playSound(config.SOUND_SEND_OK)
+        else:
+            l.debug('sendSong(): ERROR during file move')
+            self.playSound(config.SOUND_WARNING_ALARM)
+
+        command = "cp " + config.MUSIC_PATH + "/\"" + config.current_song_URL + "\" " + destination_folder + "/\"" + config.current_song_file + "\"" 
+        print 'COMMAND: ', command
+        try: 
+            command_status = os.system(command)
+        except: 
+            l.debug('sendSong(): ERROR during file move')
+            self.playSound(config.SOUND_WARNING_ALARM)
+            return -1
+        if command_status == 0:
+            l.debug('sendSong() file moved succesfully !')
+            self.playSound(config.SOUND_SEND_OK)
+        else:
+            l.debug('sendSong(): ERROR during file move')
+            self.playSound(config.SOUND_WARNING_ALARM)
+        
+        l = logging.getLogger('controller.cloudPush')
+        command =  "rclone sync " + destination_folder + " gdrive:/castizer/shares/" + config.C_OWNER + "4" + config.sendTo
+        #TODO: write output of command to file " >> " + "log/" + "cloud_pull.log
+        print command
         
         t = threading.Thread(target=self.doSendSong, args = (self.queue_do, command))
         t.start()
@@ -458,9 +494,32 @@ class Controller(threading.Thread):
     #     once finished, blink the LED to notify user !
     def checkForIncomingSongs(self):
 
-        l = logging.getLogger('controller.event')
+        l = logging.getLogger('controller.checkForIncomingSongs')
 
-        json_infile = config.SAMBA_PATH + "/" + config.C_INCOMING_FOLDER + "/" + config.JSON_OUTFILE
+        destination_folder = config.C_SHARES_FOLDER + "/" + config.sendFrom + "4" + config.C_OWNER      
+        command =  "rclone sync gdrive:/castizer/shares/" + config.sendFrom + "4" + config.C_OWNER + " " + destination_folder
+        print command
+        l.debug('Launching command...')
+        try: 
+            command_status = os.system(command)
+            l.debug('Command completed')
+        except: 
+            l.debug('checkForIncomingSongs - cloudPull(): ERROR')
+            self.playSound(config.SOUND_WARNING_ALARM)
+            return -1
+        if command_status == 0:
+            l.debug('checkForIncomingSongs - cloudPull() succesfully completed !')
+            #self.playSound(config.SOUND_SEND_OK)
+        else:
+            l.debug('checkForIncomingSongs - cloudPull(): ERROR')
+            self.playSound(config.SOUND_WARNING_ALARM)
+            return -1
+        
+        json_infile = destination_folder + "/" + config.JSON_OUTFILE
+        #t = threading.Thread(target=self.doSendSong, args = (self.queue_do, command))
+        #t.start()
+        #l.debug('Created new thread to send the song in background')
+
         #check if there is incoming music
         if os.path.isfile(json_infile):
             print 'Incoming Song Available !'
@@ -472,11 +531,14 @@ class Controller(threading.Thread):
             l.debug('JSON file does not exist !')
             return
 
+        return 0
+
     def getIncomingSong(self):
                 
-        l = logging.getLogger('controller.event')
+        l = logging.getLogger('controller.getIncomingSong')
 
-        json_infile = config.SAMBA_PATH + "/" + config.C_INCOMING_FOLDER + "/" + config.JSON_OUTFILE
+        incoming_folder = config.C_SHARES_FOLDER + "/" + config.sendFrom + "4" + config.C_OWNER      
+        json_infile = incoming_folder + "/" + config.JSON_OUTFILE
         #check if there is incoming music
         if os.path.isfile(json_infile):
             print 'Incoming Song Available !'
@@ -507,23 +569,22 @@ class Controller(threading.Thread):
         print "************************"
         
         # copy received song from incoming to received folder
-        command = "mv \"" + config.SAMBA_PATH + "/" + config.C_INCOMING_FOLDER + "/" + config.received_song_url + "\" " + config.MUSIC_PATH + "/" + config.C_RECEIVED_FOLDER + "/"
+        command = "mv \"" + incoming_folder + "/" + config.received_song_url + "\" " + config.MUSIC_PATH + "/" + config.C_RECEIVED_FOLDER + "/"
+        print command
+
         print 'COMMAND: ', command
         try: 
             command_status = os.system(command)
         except: 
             l.debug('receiveSong(): ERROR during file move')
-            l.debug('receiveSong(): ERROR1')
             self.playSound(config.SOUND_WARNING_ALARM)
             return -1
         if command_status == 0:
             l.debug('receiveSong() file moved succesfully !')
             self.playSound(config.SOUND_SEND_OK)
-            #self.playSound(config.SOUND_RESET_NETWORK_COMPLETED)
-            #l.debug('resetNetwork(): END')
         else:
-            l.debug('receiveSong(): File already existed. For the momment we dont care.')
-            self.playSound(config.SOUND_SEND_OK)
+            l.debug('receiveSong(): ERROR during file move')
+            self.playSound(config.SOUND_WARNING_ALARM)
  
         #update mpd Library
         l.debug('>>> Updating MUSIC DataBase')                    
@@ -577,6 +638,26 @@ class Controller(threading.Thread):
             l.debug('readJson(): JSON file succesfully removed')
         else:
             l.debug('readJson(): ERROR during file removal')
+            self.playSound(config.SOUND_WARNING_ALARM)
+            return -1
+
+        # Sync with the cloud
+        destination_folder = config.C_SHARES_FOLDER + "/" + config.sendFrom + "4" + config.C_OWNER      
+        command =  "rclone sync " + destination_folder + " gdrive:/castizer/shares/" + config.sendFrom + "4" + config.C_OWNER
+        print command
+        l.debug('Launching command...')
+        try: 
+            command_status = os.system(command)
+            l.debug('Command completed')
+        except: 
+            l.debug('getIncomingSong - cloudPush(): ERROR')
+            self.playSound(config.SOUND_WARNING_ALARM)
+            return -1
+        if command_status == 0:
+            l.debug('getIncomingSong - cloudPush() succesfully completed !')
+            #self.playSound(config.SOUND_SEND_OK)
+        else:
+            l.debug('getIncomingSong - cloudPush(): ERROR')
             self.playSound(config.SOUND_WARNING_ALARM)
             return -1
 
@@ -759,7 +840,7 @@ class Controller(threading.Thread):
                 if status['state'] == 'play':
                     l.debug('>>> Prev song !')
                     self.mpd.previous()
-        if keycode == config.BUTTON_SEND_ANNA or keycode == config.BUTTON_SEND_ALBERTO:
+        if keycode == config.BUTTON_SEND_PABLO or keycode == config.BUTTON_SEND_COQUI:
             if clicks == 1:
                 l.debug('BUTTON_SEND, 1 click')
                 status = self.mpd.status()

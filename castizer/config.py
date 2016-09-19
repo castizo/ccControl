@@ -47,9 +47,13 @@ received_song_url =  "NoSongReceived"
                                 
 JSON_OUTFILE = "json_incoming_songs.txt"
 C_SAMBA_SERVER_LOCAL = 'localhost'
-C_INCOMING_FOLDER = 'incoming'
 C_RECEIVED_FOLDER = 'received'    
             
+C_FRIENDS_ALBERTO = 'alberto'
+C_FRIENDS_ANNA = 'anna'
+C_FRIENDS_COQUI = 'coqui'
+C_FRIENDS_PABLO = 'pablo'
+
 if HOST_NAME in ('OpenWrt', 'dubber', 'castizer'):
     print 'PLATFORM=CASTIZER'
     PLATFORM = 'castizer'
@@ -68,8 +72,10 @@ elif HOST_NAME in ('cloudcaster'):
     BUTTON_NEXT = 32      # d
     BUTTON_RECEIVE = 16   # q
     BUTTON_VOL_UP = 17    # w
-    BUTTON_SEND_ANNA = 18      # e 
-    BUTTON_SEND_ALBERTO = 19      # r 
+    #BUTTON_SEND_ANNA = 18      # e 
+    #BUTTON_SEND_ALBERTO = 19      # r
+    BUTTON_SEND_PABLO = 18      # e
+    BUTTON_SEND_COQUI = 19      # r
     BUTTON_ACTION = 31      # s
     BUTTON_STOP = 44    # z
     BUTTON_VOL_DOWN = 45    # x
@@ -78,12 +84,9 @@ elif HOST_NAME in ('cloudcaster'):
     BUTTON_UPDATEDB = 22 # u
     BUTTON_QUIT = 16 # q
     HOME_PATH = "/home/d/cloudcaster"
-    FILES_PATH = HOME_PATH + "/cc_files"
-    MUSIC_PATH = FILES_PATH + "/music"
-    C_SAMBA_SERVER_REMOTE = 'ccanna'
-    C_USERSAMBA_LOCAL = 'd'
-    C_USERSAMBA_REMOTE = 'pi'
-elif HOST_NAME in ('ccanna'):
+    C_OWNER = 'pablo'
+    sendFrom = "coqui"
+elif HOST_NAME in ('cccoqui'):
     PLATFORM = 'RASPI'
     print 'PLATFORM=', PLATFORM
     VOLUME_INIT = 10
@@ -93,8 +96,10 @@ elif HOST_NAME in ('ccanna'):
     BUTTON_NEXT = 32      # d
     BUTTON_RECEIVE = 16   # q
     BUTTON_VOL_UP = 17    # w
-    BUTTON_SEND_ANNA = 18      # e 
-    BUTTON_SEND_ALBERTO = 19      # r 
+    #BUTTON_SEND_ANNA = 18      # e 
+    #BUTTON_SEND_ALBERTO = 19      # r 
+    BUTTON_SEND_COQUI = 18      # e
+    BUTTON_SEND_PABLO = 19      # r
     BUTTON_ACTION = 31      # s
     BUTTON_STOP = 44    # z
     BUTTON_VOL_DOWN = 45    # x
@@ -102,11 +107,9 @@ elif HOST_NAME in ('ccanna'):
     BUTTON_DEBUG = 47 # c
     BUTTON_UPDATEDB = 22
     BUTTON_QUIT = 16 # q
-    SAMBA_PATH = "/home/pi/cloudcaster/cc_files"
-    MUSIC_PATH = "/home/pi/cloudcaster/cc_files/music"
-    C_SAMBA_SERVER_REMOTE = 'cloudcaster'
-    C_USERSAMBA_LOCAL = 'pi'
-    C_USERSAMBA_REMOTE = 'd'
+    HOME_PATH = "/home/pi/cloudcaster"
+    C_OWNER = 'coqui'
+    sendFrom = "pablo"
 #elif HOST_NAME in ('ubuntu'):
 #    PLATFORM = 'pc'
 #    print 'PLATFORM=pc'
@@ -129,6 +132,10 @@ else:
     BUTTON_ACTION = 115
     BUTTON_VOL_UP = 114
     BUTTON_VOL_DOWN = 113
+
+FILES_PATH = HOME_PATH + "/cc_files"
+MUSIC_PATH = FILES_PATH + "/music"
+C_SHARES_FOLDER = FILES_PATH + "/shares"
 
 #BUTTON_ACTION = 113
 #BUTTON_VOL_UP = 114
@@ -173,7 +180,11 @@ SOUND_UPDATE_MUSIC_DB_COMPLETED = 'resources/update_music_db_completed.wav'
 SOUND_WARNING_ALARM = 'resources/sonar.wav'
 
 SOUND_SENDING_SONG_TO = 'resources/sending_song_to.mp3'
-SOUND_ANNA = 'resources/anna.mp3'
 SOUND_ALBERTO = 'resources/alberto.mp3'
+SOUND_ANNA = 'resources/anna.mp3'
+SOUND_COQUI = 'resources/anna.mp3'
+SOUND_PABLO = 'resources/alberto.mp3'
+
+
 SOUND_SEND_OK = 'resources/sonar.wav'
 
