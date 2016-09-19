@@ -563,8 +563,8 @@ class Controller(threading.Thread):
 
         print "Number of songs: " + str(json_data['incoming'])
         for song in json_data['songs']:   
-            print "Sender: " + str(song['sender']) + " URL: " + str(song['url'])
-            config.received_song_url =  str(song['url'])
+            print "Sender: " + (song['sender'].encode('utf-8')) + " URL: " + song['url'].encode('utf-8')
+            config.received_song_url =  song['url'].encode('utf-8')
 
         print "************************"
         
