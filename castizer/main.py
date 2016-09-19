@@ -661,6 +661,26 @@ class Controller(threading.Thread):
             self.playSound(config.SOUND_WARNING_ALARM)
             return -1
 
+        # Sync with the cloud
+        received_folder = config.MUSIC_PATH + "/" + config.C_RECEIVED_FOLDER
+        command =  "rclone sync " + received_folder + " gdrive:/castizer/music/" + config.C_RECEIVED_FOLDER
+        print command
+        l.debug('Launching command...')
+        try: 
+            command_status = os.system(command)
+            l.debug('Command completed')
+        except: 
+            l.debug('getIncomingSong - cloudPush(): ERROR')
+            self.playSound(config.SOUND_WARNING_ALARM)
+            return -1
+        if command_status == 0:
+            l.debug('getIncomingSong - cloudPush() succesfully completed !')
+            #self.playSound(config.SOUND_SEND_OK)
+        else:
+            l.debug('getIncomingSong - cloudPush(): ERROR')
+            self.playSound(config.SOUND_WARNING_ALARM)
+            return -1
+
         self.incoming_songs = False
         print 'TODO: stop LED blinking !'
 
@@ -726,21 +746,26 @@ class Controller(threading.Thread):
 
     def cloudPull(self):
         l = logging.getLogger('controller.cloudPull')
-        #For testing: rclone sync --dry-run gdrive:
-        command =  "rclone sync gdrive:/castizer/music/" + "4" + " " +  config.MUSIC_PATH + "/" + "4"
-        #TODO: write output of command to file " >> " + "log/" + "cloud_pull.log
-        print command
-        l.debug('Launching command...')
-        try: 
-            command_status = os.system(command)
-            l.debug('Command completed')
-        except: 
-            l.debug('cloudPull(): ERROR')
-            self.playSound(config.SOUND_WARNING_ALARM)
-            return -1
-        if command_status == 0:
-            l.debug('cloudPull() succesfully completed !')
-            #self.playSound(config.SOUND_SEND_OK)
+        for folderName in self.folders:   
+            #For testing: rclone sync --dry-run gdrive:
+            command =  "rclone sync gdrive:/castizer/music/" + folderName + " " +  config.MUSIC_PATH + "/" + folderName
+            #TODO: write output of command to file " >> " + "log/" + "cloud_pull.log
+            print command
+            l.debug('Launching command...')
+            try: 
+                command_status = os.system(command)
+                l.debug('Command completed')
+            except: 
+                l.debug('cloudPull(): ERROR')
+                self.playSound(config.SOUND_WARNING_ALARM)
+                return -1
+            if command_status == 0:
+                l.debug('cloudPull() succesfully completed for folder ' + folderName)
+            else:
+                l.debug('cloudPull(): ERROR')
+                self.playSound(config.SOUND_WARNING_ALARM)
+                return -1
+        l.debug('cloudPull() succesfully completed !')
         return command_status        
     
     def button_event(self, keycode, clicks, holds):
