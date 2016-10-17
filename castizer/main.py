@@ -22,7 +22,8 @@ from time import sleep
 #import subprocess
 
 if config.PLATFORM == 'castizer':
-    import leds
+    #import leds
+    import dummyleds as leds
 else:
     import dummyleds as leds
 
@@ -73,26 +74,28 @@ class Controller(threading.Thread):
 
     def run(self):
         while not self.exit_event.is_set():
-            try:
-                keycode, clicks, holds = self.queue.get(block=True, timeout=1)
-            except Queue.Empty:
+            if config.ENABLE_BUTTONS:
                 try:
-                    message = self.queue_do.get(block=False)
-                    print "run method: received from queue_do: ", message
+                    keycode, clicks, holds = self.queue.get(block=True, timeout=1)
                 except Queue.Empty:
+                    try:
+                        message = self.queue_do.get(block=False)
+                        print "run method: received from queue_do: ", message
+                    except Queue.Empty:
+                        continue
                     continue
-                continue
-            self.button_event(keycode, clicks, holds)
-            try:
-                action, value = self.queue_sensors.get(block=True, timeout=0.1)
-            except Queue.Empty:
+                self.button_event(keycode, clicks, holds)
+            if config.ENABLE_SENSORS:
                 try:
-                    message = self.queue_sensors.get(block=False)
-                    print "run method: received from queue_sensors: ", message
+                    action, value = self.queue_sensors.get(block=True, timeout=0.1)
                 except Queue.Empty:
+                    try:
+                        message = self.queue_sensors.get(block=False)
+                        print "run method: received from queue_sensors: ", message
+                    except Queue.Empty:
+                        continue
                     continue
-                continue
-            self.sensors_event(action, value)
+                self.sensors_event(action, value)
 
     # called by each thread
     def doSendSong(self, q, command):
@@ -150,9 +153,9 @@ class Controller(threading.Thread):
         self.mpd.setvol(config.VOLUME_INIT)
         self.playStartSound()
         l = logging.getLogger('controller.event')
-        l.debug('LED on')        
-        self.led.on()
-        self.sleeping = 0
+        #l.debug('LED on')        
+        #self.led.on()
+        self.sleeping = 1
         self.incoming_songs = False
         
     def load_random_playlist(self):
@@ -200,6 +203,25 @@ class Controller(threading.Thread):
         if config.LIMITED_PLAYLIST_CONTROL_BASED_ON_FOLDERS:
             self.load_next_folder()
             self.mpd.random(1)
+        else:
+            self.load_random_playlist()
+
+    # Playlist will go from 0 to 9
+    def load_playlist(self, pl):
+        if config.LIMITED_PLAYLIST_CONTROL_BASED_ON_FOLDERS:
+            self.folder_index = pl
+            folder_to_play = self.folders[self.folder_index]
+            print 'NEXT playlist (FOLDER MODE):', folder_to_play        
+            self.mpd.clear()
+            try:
+                self.mpd.add(folder_to_play)
+            except mpd.CommandError: 
+                print 'Error loading playlist (FOLDER MODE) !'
+            if self.sleeping == 1:
+                self.saveSoundContext()
+                self.wakeup()
+            else:
+                self.mpd.play()
         else:
             self.load_random_playlist()
 
@@ -721,6 +743,16 @@ class Controller(threading.Thread):
         except mpd.CommandError: 
             l.debug('nullifySoundContext: There was no pl_current playlist')        
 
+    def setVolume(self, new_vol):
+        l = logging.getLogger('controller.setVolume')
+        if (new_vol < 0) and (new_vol > 100):
+            l.debug('Volume event received with volume out of bounds !')
+        else:
+            try:
+                self.mpd.setvol(new_vol)
+            except mpd.CommandError: 
+                l.debug('Volume out of bounds ! (under/over-flow)')
+
     def volume(self, amount):
         l = logging.getLogger('controller.event')
         stat = self.mpd.status()
@@ -792,13 +824,27 @@ class Controller(threading.Thread):
         return command_status        
     
     def sensors_event(self, action, value):
-        l = logging.getLogger('controller.sensor_event')
-        if action == config.ACTION_SWITCH_ON:
+        l = logging.getLogger('controller.sensors_event')
+        if action == config.ACTION_JUST_BOOTED:
+            l.debug('boot completed !')
+            print 'Castizer just booted up !'
+            self.wakeup()            
+        elif action == config.ACTION_SWITCH_ON:
+            l.debug('switch_on')
             print 'Castizer is ON'
+            self.wakeup()            
         elif action == config.ACTION_SWITCH_OFF:
+            l.debug('switch_off')
             print 'Castizer is OFF'
+            self.shut_down()            
+        elif action == config.ACTION_VOLUME:
+            l.debug('volume' + str(value))
+            self.setVolume(value)
+        elif action == config.ACTION_CHANNEL:
+            l.debug('channel' + str(value))
+            self.load_playlist(value)
         else:
-            print 'Unknown action !'
+            l.debug('Unknown action !')
 
     def button_event(self, keycode, clicks, holds):
         l = logging.getLogger('controller.event')
