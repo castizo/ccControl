@@ -7,6 +7,9 @@ import platform
 DEBUG = True
 DEBUG_LAUNCH_FROM_LIGHTTPD = False
 
+ACTION_SWITCH_ON = 0
+ACTION_SWITCH_OFF = 1
+
 LIMITED_PLAYLIST_CONTROL_BASED_ON_FOLDERS = True
 MUSIC_FOLDERS = ['1', '2', '3', '4']
 #MUSIC_FOLDERS = ['1', '2', '3', '4', '5', '6']
@@ -68,6 +71,7 @@ elif HOST_NAME in ('cloudcaster'):
     print 'PLATFORM=pc'
     VOLUME_INIT = 50
     BUTTONS_EVDEV_FILE = '/dev/input/event0'
+    SENSORS_SERIAL_PORT = '/dev/pts/2'
     BUTTON_PREV = 30      # a
     BUTTON_NEXT = 32      # d
     BUTTON_RECEIVE = 16   # q

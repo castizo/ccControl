@@ -1,4 +1,5 @@
 import buttons
+import sensors
 import config
 import updater
 import plugins
@@ -12,7 +13,7 @@ import json
 import time
 #TODO: Only is used for os->reboot to install updates... look for alternative way to do it
 import os
-from flup.server.fcgi import WSGIServer
+#from flup.server.fcgi import WSGIServer
 from mhlib import Folder
 from setuptools.extension import Library
 from time import sleep
@@ -42,6 +43,12 @@ class Controller(threading.Thread):
         self.queue = Queue.Queue()
         self.queue_do = Queue.Queue()
 
+        dummy_parameter = "dummy_parameter"
+        self.sensors = sensors.SensorReader(dummy_parameter)
+        self.sensors.register(self.sensors_callback)
+        self.sensors.start()
+        self.queue_sensors = Queue.Queue()
+
         self.folder_index = -1
         self.folders = config.MUSIC_FOLDERS
         self.mpd = mpd.MPDClient()
@@ -58,6 +65,12 @@ class Controller(threading.Thread):
         print 'KEY CODE:', keycode, 'CLICKS:', clicks, 'HOLDS:', holds
         self.queue.put_nowait((keycode, clicks, holds))
 
+    def sensors_callback(self, action, value):
+        # Beware: this code will run in the buttons thread
+        #if config.DEBUG:
+        print 'SENSORS INFO:', action, 'VALUE:', value
+        self.queue_sensors.put_nowait((action, value))
+
     def run(self):
         while not self.exit_event.is_set():
             try:
@@ -70,6 +83,16 @@ class Controller(threading.Thread):
                     continue
                 continue
             self.button_event(keycode, clicks, holds)
+            try:
+                action, value = self.queue_sensors.get(block=True, timeout=0.1)
+            except Queue.Empty:
+                try:
+                    message = self.queue_sensors.get(block=False)
+                    print "run method: received from queue_sensors: ", message
+                except Queue.Empty:
+                    continue
+                continue
+            self.sensors_event(action, value)
 
     # called by each thread
     def doSendSong(self, q, command):
@@ -768,6 +791,15 @@ class Controller(threading.Thread):
         l.debug('cloudPull() succesfully completed !')
         return command_status        
     
+    def sensors_event(self, action, value):
+        l = logging.getLogger('controller.sensor_event')
+        if action == config.ACTION_SWITCH_ON:
+            print 'Castizer is ON'
+        elif action == config.ACTION_SWITCH_OFF:
+            print 'Castizer is OFF'
+        else:
+            print 'Unknown action !'
+
     def button_event(self, keycode, clicks, holds):
         l = logging.getLogger('controller.event')
         if keycode == config.BUTTON_UPDATEDB:
@@ -902,6 +934,7 @@ class Controller(threading.Thread):
 
     def exit(self):
         self.buttons.exit()
+        self.sensors.exit()
         self.exit_event.set()
 
 
@@ -946,19 +979,21 @@ def main():
     print '      in case the user added / removed songs'
     print 'TRY the autoupdate function in the mpd.conf file'
                         
+    l = logging.getLogger('controller.event')
     if config.PLATFORM == 'castizer':
         #flup.server.fcgi.WSGIServer(bottle.default_app()).run()
-        WSGIServer(bottle.default_app(), bindAddress="/tmp/fastcgi.python.socket").run()
-        l = logging.getLogger('controller.event')
+        #WSGIServer(bottle.default_app(), bindAddress="/tmp/fastcgi.python.socket").run()
+        l.debug('main(): PLATFORM == castizer')
     else:
-        l = logging.getLogger('controller.event')
-        l.debug('starting bottle...')
         # Reset the LED to ON, because during the boot up there is something that
         # overwrites it to off
         l.debug('main(): LED on')
         time.sleep(3)                
         global_controller.led.on()
-        bottle.run(host='0.0.0.0', port=config.WEB_SERVER_PORT, debug=config.DEBUG)
+        #bottle.run(host='0.0.0.0', port=config.WEB_SERVER_PORT, debug=config.DEBUG)
+        #We stay in the program (otherwise the other threads will die)
+        while(1):
+            sleep(1)
     global_controller.exit()
 
 if __name__ == '__main__':

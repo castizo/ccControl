@@ -8,7 +8,7 @@ import time
 import sys
  
 #port = '/dev/usb/tts/0'
-port = '/dev/pts/3'
+port = '/dev/pts/2'
 baudrate = 9600
  
 # open serial port
