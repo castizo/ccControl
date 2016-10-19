@@ -88,6 +88,7 @@ class Controller(threading.Thread):
             if config.ENABLE_SENSORS:
                 try:
                     action, value = self.queue_sensors.get(block=True, timeout=0.1)
+                    print ">>> CHECKPOINT SENSORS action: ", action, " value: ", value
                 except Queue.Empty:
                     try:
                         message = self.queue_sensors.get(block=False)
@@ -96,6 +97,7 @@ class Controller(threading.Thread):
                         continue
                     continue
                 self.sensors_event(action, value)
+                pass
 
     # called by each thread
     def doSendSong(self, q, command):
@@ -828,7 +830,7 @@ class Controller(threading.Thread):
         if action == config.ACTION_JUST_BOOTED:
             l.debug('boot completed !')
             print 'Castizer just booted up !'
-            self.wakeup()            
+            #self.wakeup()            
         elif action == config.ACTION_SWITCH_ON:
             l.debug('switch_on')
             print 'Castizer is ON'
@@ -843,6 +845,36 @@ class Controller(threading.Thread):
         elif action == config.ACTION_CHANNEL:
             l.debug('channel' + str(value))
             self.load_playlist(value)
+        elif action == config.ACTION_JOY_BUTTON:
+            if (value == 1):
+                l.debug('ACTION_JOY_BUTTON: 1')
+                l.debug('action, BUTTON_UPDATEDB')
+                l.debug('>>> Updating MUSIC DataBase')                    
+                self.warn()
+                self.nullifySoundContext()
+                #self.playSound(config.SOUND_UPDATE_MUSIC_DB)
+                time.sleep(1)
+                #update music folders from the cloud
+                self.cloudPull()
+                #print self.mpd.status()
+                self.mpd.update()
+                #print self.mpd.status()
+                updating = 1
+                while updating != 0:
+                    status = self.mpd.status()
+                    if 'updating_db' in status:
+                        updating = status['updating_db']
+                        l.debug('>>> updating_db = ' + str(updating))
+                        time.sleep(0.1)
+                    else:
+                        updating = 0                        
+                        l.debug('>>> updating_db = <> ')
+                l.debug('>>> Updating MUSIC DataBase COMPLETED')                    
+                self.warn()
+                self.playSound(config.SOUND_UPDATE_MUSIC_DB_COMPLETED)
+                self.wakeup()
+            else:
+                l.debug('ACTION_JOY_BUTTON: wrong value!')
         else:
             l.debug('Unknown action !')
 

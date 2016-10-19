@@ -21,8 +21,8 @@ ENABLE_BUTTONS = 0
 ENABLE_SENSORS = 1
 
 LIMITED_PLAYLIST_CONTROL_BASED_ON_FOLDERS = True
-MUSIC_FOLDERS = ['1', '2', '3', '4']
-#MUSIC_FOLDERS = ['1', '2', '3', '4', '5', '6']
+#MUSIC_FOLDERS = ['1', '2', '3', '4']
+MUSIC_FOLDERS = ['1', '2', '3', '4', '5', '6']
 
 logging.basicConfig(level=logging.DEBUG if DEBUG else logging.WARNING)
 
@@ -81,7 +81,8 @@ elif HOST_NAME in ('cloudcaster'):
     print 'PLATFORM=pc'
     VOLUME_INIT = 50
     BUTTONS_EVDEV_FILE = '/dev/input/event0'
-    SENSORS_SERIAL_PORT = '/dev/pts/2'
+    #SENSORS_SERIAL_PORT = '/dev/pts/2' #for testing with socat
+    SENSORS_SERIAL_PORT = '/dev/ttyACM0' #Arduino Serial Port
     BUTTON_PREV = 30      # a
     BUTTON_NEXT = 32      # d
     BUTTON_RECEIVE = 16   # q
