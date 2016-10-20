@@ -89,6 +89,22 @@ MPD_CONF_REST = """
     }
 """
     
+MPD_CONF_REST_RASPI = """
+    bind_to_address         "localhost"
+    port                    "6600"
+    auto_update             "yes"
+    audio_output {
+            type            "alsa"
+            name            "My ALSA Device"
+            device          "hw:1,0"    # optional
+            format          "44100:16:2"    # optional
+            mixer_device    "default"       # optional
+            mixer_control   "PCM"           # optional
+            mixer_index     "0"             # optional
+            mixer_type      "software"      # optional            
+    }
+"""
+
 MPD_CONF_PATH = '/tmp/mpd.conf'
 file_handler = open(MPD_CONF_PATH, "w")
 
@@ -112,6 +128,17 @@ if config.PLATFORM == 'castizer':
     # let some time to close the port so that it can be reopened
     time.sleep(1)
     chdir(config.MUSIC_PATH)
+elif config.PLATFORM == 'RASPI':
+    print 'CHECKPOINT'
+    print 'Run configuration: PLATFORM=', config.PLATFORM
+    #file_handler.write(expandvars(MPD_CONF))
+    #locals()
+    file_handler.write(MPD_CONF_HEAD.format(**locals()))
+    file_handler.write(MPD_CONF_REST_RASPI)
+    print "Killing old instances of mpd..."
+    call(['killall', 'mpd'])
+    # let some time to close the port so that it can be reopened
+    time.sleep(1)
 elif config.PLATFORM == 'devmachine' or 'pc':
     print 'Run configuration: PLATFORM=', config.PLATFORM
     #file_handler.write(expandvars(MPD_CONF))

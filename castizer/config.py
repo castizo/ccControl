@@ -107,6 +107,8 @@ elif HOST_NAME in ('cccoqui'):
     VOLUME_INIT = 10
     # when plugged in the USB sound card, it becomes event1. event0 otherwise
     BUTTONS_EVDEV_FILE = '/dev/input/event1'
+    #BUTTONS_EVDEV_FILE = '/dev/input/event0'
+    SENSORS_SERIAL_PORT = '/dev/ttyACM0' #Arduino Serial Port
     BUTTON_PREV = 30      # a
     BUTTON_NEXT = 32      # d
     BUTTON_RECEIVE = 16   # q

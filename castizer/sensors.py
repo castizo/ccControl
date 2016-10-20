@@ -28,7 +28,7 @@ class SensorReader(threading.Thread):
             self.ser = serial.Serial(config.SENSORS_SERIAL_PORT, baudrate,timeout=None)
             print 'Serial port succesfully opened ! ', config.SENSORS_SERIAL_PORT 
         except:
-            print 'Error opening serial port!'
+            print 'Error opening serial port: <', config.SENSORS_SERIAL_PORT, '>'
             exit
         #TODO > Wait until signal from Arduino saying it is ready        
         #var = raw_input("Enter something: ")
