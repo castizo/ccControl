@@ -153,6 +153,7 @@ class Controller(threading.Thread):
 
     def justBooted(self):
         self.mpd.setvol(config.VOLUME_INIT)
+	time.sleep(3)
         self.playStartSound()
         l = logging.getLogger('controller.event')
         #l.debug('LED on')        
@@ -214,8 +215,8 @@ class Controller(threading.Thread):
             self.folder_index = pl
             folder_to_play = self.folders[self.folder_index]
             print 'NEXT playlist (FOLDER MODE):', folder_to_play        
-            self.mpd.clear()
             try:
+		self.mpd.clear()
                 self.mpd.add(folder_to_play)
             except mpd.CommandError: 
                 print 'Error loading playlist (FOLDER MODE) !'
