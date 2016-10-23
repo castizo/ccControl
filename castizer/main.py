@@ -841,7 +841,7 @@ class Controller(threading.Thread):
             self.shut_down()            
         elif action == config.ACTION_VOLUME:
             l.debug('volume' + str(value))
-            self.setVolume(value)
+            self.setVolume(value*11)
         elif action == config.ACTION_CHANNEL:
             l.debug('channel' + str(value))
             self.load_playlist(value)

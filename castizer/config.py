@@ -82,7 +82,8 @@ elif HOST_NAME in ('cloudcaster'):
     VOLUME_INIT = 50
     BUTTONS_EVDEV_FILE = '/dev/input/event0'
     #SENSORS_SERIAL_PORT = '/dev/pts/2' #for testing with socat
-    SENSORS_SERIAL_PORT = '/dev/ttyACM0' #Arduino Serial Port
+    SENSORS_SERIAL_PORT = '/dev/ttyACM0' #Arduino Uno Serial Port
+    #SENSORS_SERIAL_PORT = '/dev/ttyUSB0' #Arduino Nano Serial Port
     BUTTON_PREV = 30      # a
     BUTTON_NEXT = 32      # d
     BUTTON_RECEIVE = 16   # q
@@ -106,9 +107,10 @@ elif HOST_NAME in ('cccoqui'):
     print 'PLATFORM=', PLATFORM
     VOLUME_INIT = 10
     # when plugged in the USB sound card, it becomes event1. event0 otherwise
-    BUTTONS_EVDEV_FILE = '/dev/input/event1'
-    #BUTTONS_EVDEV_FILE = '/dev/input/event0'
-    SENSORS_SERIAL_PORT = '/dev/ttyACM0' #Arduino Serial Port
+    #BUTTONS_EVDEV_FILE = '/dev/input/event1'
+    BUTTONS_EVDEV_FILE = '/dev/input/event0'
+    #SENSORS_SERIAL_PORT = '/dev/ttyACM0' #Arduino Uno Serial Port
+    SENSORS_SERIAL_PORT = '/dev/ttyUSB0' #Arduino Nano Serial Port
     BUTTON_PREV = 30      # a
     BUTTON_NEXT = 32      # d
     BUTTON_RECEIVE = 16   # q
